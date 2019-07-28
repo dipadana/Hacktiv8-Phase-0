@@ -1,0 +1,48 @@
+# NO.1
+
+STORE "massa benda" with 600
+STORE "percepatan benda" with 2
+
+CALCULATE  "massa benda" times "percepatan benda"
+SET "resultan gaya" value with calculate resultan
+
+DISPLAY "resultan gaya"
+
+
+
+# NO.2
+
+STORE "tahun" with any year's value
+
+IF "tahun" mod 4 = 0
+    DISPLAY 'tahun kabisat'
+IF "tahun" mod 100 = 0
+    DISPLAY 'tahun kabisat'
+IF "tahun" mod 400 = 0
+    DISPLAY 'tahun kabisat'
+ELSE
+    DISPLAY 'bukan tahun kabisat'
+
+
+
+#  NO.3
+STORE "jumlah baju" with 0
+
+WHILE "jumlah baju" < 21
+    ADD "jumlah baju" by 1
+
+IF "jumlah baju" = 20
+    DO 'mulai mencuci'
+
+
+
+# NO. 4
+STORE "siswa" = 1
+
+WHILE "siswa" <  41
+    IF "siswa" have 'kuku panjang'
+        DO 'hukum siswa tersebut'
+    ELSE    
+        DO 'puji siswa'
+
+DISPLAY 'periksa kuku selesai'
