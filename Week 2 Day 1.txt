@@ -46,6 +46,7 @@ WHILE "jumlah baju" FEWER THAN 21
     IF "jumlah baju" EQUALS TO 20
         DO 'mulai mencuci'
     END IF
+DISPLAY mesin mulai mencuci
 
 
 # NO. 4
@@ -65,4 +66,4 @@ WHILE "urutanSiswa" FEWER THAN 41
         DO puji siswa
         ADD "urutanSiswa" by 1
     END IF
-DISPLAY 'periksa kuku selesai'
+DISPLAY periksa kuku selesai
