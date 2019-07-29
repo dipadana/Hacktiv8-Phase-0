@@ -1,5 +1,5 @@
 var nama = 'Dipa';
-var peran = 'Ksatria';
+var peran = 'Tabib';
 
 if (nama == false && peran == false){
   console.log('Nama harus diisi!');
@@ -17,7 +17,7 @@ else if (nama && peran === 'Tabib'){
 }
 else if (nama && peran === 'Penyihir'){
   console.log('Selamat datang di Dunia Proxytia, ' + nama);
-  console.log('Halo Tabib ' + nama + ', kamu akan membantu temanmu yang terluka.');
+  console.log('Halo Penyihir ' + nama + ', ciptakan keajaiban yang membantu kemenanganmu!');
 }
 else if (nama == false && peran){
   console.log('Nama harus diisi!');
