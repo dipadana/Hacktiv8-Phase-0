@@ -1,48 +1,68 @@
 # NO.1
+1. simpan variabel masa benda dengan nilai 600 kg
+2. simpan variabel percepatan benda dengan nilai 2m/s^2
+3. berdasarkan bunyi hukum newton 2, resultan gaya hasil kali dari massa dan percepatan
+4. kalikan massa dan percepatan, lalu tampung nilai hasilnya kedalam variable resultan gaya
+5. hasilnya ada adalah 1200 newton
 
-STORE "massa benda" with 600
-STORE "percepatan benda" with 2
-
+STORE "massa benda" with 600kg
+STORE "percepatan benda" with 2m/s^2
 CALCULATE  "massa benda" times "percepatan benda"
-SET "resultan gaya" value with calculate resultan
-
+STORE "resultan gaya" with calculate result
 DISPLAY "resultan gaya"
 
 
-
 # NO.2
+1. simpan variabel tahun dengan tahun yang akan dicek ke'kabisat'annya
+2. jika tahun habis dibagi 4, lanjut ke step 5, bila tidak lanjut ke step 3
+3. jika tahun habis dibagi 100, lanjut ke step 5, bila tidak lanjut ke step 4
+4. jika tahun habis dibagi 400, lanjut ke step 5, bila tidak lanjut ke step 6
+5. tahun tersebut adalah tahun kabisat
+6. tahun tersebut bukan tahun kabisat
 
 STORE "tahun" with any year's value
-
-IF "tahun" mod 4 = 0
-    DISPLAY 'tahun kabisat'
-IF "tahun" mod 100 = 0
-    DISPLAY 'tahun kabisat'
-IF "tahun" mod 400 = 0
-    DISPLAY 'tahun kabisat'
+IF "tahun" mod 4 EQUALS TO 0
+    DISPLAY "tahun" is tahun kabisat
+IF "tahun" mod 100 EQUALS TO 0
+    DISPLAY "tahun" is tahun kabisat
+IF "tahun" mod 400 EQUALS TO 0
+    DISPLAY "tahun" is tahun kabisat
 ELSE
-    DISPLAY 'bukan tahun kabisat'
-
+    DISPLAY "tahun" is bukan tahun kabisat
+END IF
 
 
 #  NO.3
+1. simpan variabel jumlah baju dengan 0
+2. masukan baju satu persatu kedalam mesin cuci
+3. setiap kali satu baju dimasukan kedalam mesin, variabel jumlah baju bertambah 1
+4. step 3 terus berulang dilakukan hingga jumlah baju menjadi 20, 
+5. jika jumlah baju sudah sama dengan 20, lanjut ke step 6
+6. mesin mulai mencuci
+
 STORE "jumlah baju" with 0
-
-WHILE "jumlah baju" < 21
+WHILE "jumlah baju" FEWER THAN 21
     ADD "jumlah baju" by 1
-
-IF "jumlah baju" = 20
-    DO 'mulai mencuci'
-
+    IF "jumlah baju" EQUALS TO 20
+        DO 'mulai mencuci'
+    END IF
 
 
 # NO. 4
-STORE "siswa" = 1
+1. simpan variabel urutan siswa dengan 1
+2. guru mulai memeriksa kuku siswa sesuai dengan nomor urutan
+3. jika kuku panjang, maka siswa akan dihukum, lalu lanjut ke step 5
+4. jika kuku pendek, maka siswa akan dipuji, lalu lanjut ke step 5
+5. setiap selesai memeriksa satu siswa, guru akan lanjut ke urutan siswa selanjutnya
+6. step 2 hingga step 5 akan terus berulang hingga ke 40 orang siswanya sudah diperiksa kukunya
 
-WHILE "siswa" <  41
-    IF "siswa" have 'kuku panjang'
-        DO 'hukum siswa tersebut'
+STORE "urutanSiswa" with 1
+WHILE "urutanSiswa" FEWER THAN 41
+    IF siswa ke "urutanSiswa" have kuku panjang
+        DO hukum siswa tersebut
+        ADD "urutanSiswa" by 1
     ELSE    
-        DO 'puji siswa'
-
+        DO puji siswa
+        ADD "urutanSiswa" by 1
+    END IF
 DISPLAY 'periksa kuku selesai'
