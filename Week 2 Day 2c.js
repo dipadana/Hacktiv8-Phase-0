@@ -1,7 +1,7 @@
 
 var tanggal = 20; // assign nilai variabel tanggal disini! (dengan angka antara 1 - 31)
-var bulan = 13; // assign nilai variabel bulan disini! (dengan angka antara 1 - 12)
-var tahun = 2000; // assign nilai variabel tahun disini! (dengan angka antara 1900 - 2200)
+var bulan = 6; // assign nilai variabel bulan disini! (dengan angka antara 1 - 12)
+var tahun = 1999; // assign nilai variabel tahun disini! (dengan angka antara 1900 - 2200)
 var namaBulan;
 
 if(0 < tanggal && tanggal < 32 && 1899 < tahun && tahun < 2201 && 0 < bulan && bulan < 13){
@@ -25,7 +25,7 @@ if(0 < tanggal && tanggal < 32 && 1899 < tahun && tahun < 2201 && 0 < bulan && b
             namaBulan = ' Juni ';
             break;
         case 7:
-            namaBulan = ' Juli ';
+            namaBulan = ' Juli '
             break;
         case 8:
             namaBulan = ' Agustus ';
