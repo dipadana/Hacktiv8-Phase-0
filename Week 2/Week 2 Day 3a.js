@@ -1,13 +1,14 @@
 // NO.1
-var word = 'JavaScript';
-var second = 'is';
-var third = 'awesome';
-var fourth = 'and';
-var fifth = 'I';
-var sixth = 'love';
-var seventh = 'it!';
+var word = 'JavaScript ';
+var second = 'is ';
+var third = 'awesome ';
+var fourth = 'and ';
+var fifth = 'I ';
+var sixth = 'love ';
+var seventh = 'it! ';
 console.log(word + second + third + fourth + fifth + sixth + seventh);
 
+console.log('=====================')
 
 // NO.2
 var word = 'wow JavaScript is so cool';
@@ -23,6 +24,7 @@ console.log('Third Word: ' + thirdWord);
 console.log('Fourth Word: ' + fourthWord);
 console.log('Fifth Word: ' + fifthWord);
 
+console.log('=====================')
 
 // NO.3
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
@@ -39,6 +41,7 @@ console.log('Third Word: ' + thirdWord3);
 console.log('Fourth Word: ' + fourthWord3);
 console.log('Fifth Word: ' + fifthWord3);
 
+console.log('=====================')
 
 // NO.4
 var word3 = 'wow JavaScript is so cool';

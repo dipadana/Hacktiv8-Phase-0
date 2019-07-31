@@ -8,7 +8,7 @@ while(n < 20){
 
 console.log('LOOPING KEDUA')
 var y = 22;
-while(y > 0){
+while(y > 2){
   y -= 2;
   console.log(y + ' - I will become fullstack developer');
 }

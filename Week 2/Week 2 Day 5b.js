@@ -1,19 +1,8 @@
 function balikKata(kata){
-
-    let length = (kata.length);
-    
-
-    let penampung = [];
-    for(let i = 0; i < length; i++){
-        penampung[i] = kata[i];
+    var balikKata = '';
+    for(var i = kata.length-1; i >= 0; i--){
+        balikKata += kata[i];
     }
-
-    let balikKata = '';
-    lengthr = length - 1;
-    for(i = lengthr; i >= 0; i--){
-        balikKata += penampung[i];
-    }
-    
     return balikKata;
 }
 
