@@ -1,13 +1,13 @@
 function pasanganTerbesar(num) {
 	var kalimat = String(num);
-	console.log(kalimat);
-
+	// console.log(kalimat);
+	var finalNumber = 0;
 	for(var i = 0; i < kalimat.length;i++){
-		if(kalimat.slice(i,i+2)>kalimat.slice(i+1,i+3)){
-			c
-
+		if(finalNumber < kalimat.slice(i,i+2)){
+			finalNumber = kalimat.slice(i,i+2);
 		}
 	}
+	return finalNumber;
 }
 
 // TEST CASES
