@@ -5,7 +5,6 @@ var input = [
     ["0004", "Bintang Senjaya", "Martapura", "6/4/1970", "Berkebun"]
 ]
 
-// Solution 1
 function dataHandling(nomor, nama, tempat, tl, hobi){
     console.log('Nomor ID : ' + nomor);
     console.log('Nama Lengkap : ' + nama);

@@ -1,8 +1,15 @@
 function pasanganTerbesar(num) {
+	// ubah number menjadi string, agar bisa diakses indeksnya
 	var kalimat = String(num);
-	// console.log(kalimat);
+
+	// buat variabel untuk menampung nomor hasil perbandigan
 	var finalNumber = 0;
+
+	// pencekan dilakukan berulang kali, sebanyak panjang string tadi
 	for(var i = 0; i < kalimat.length;i++){
+
+		// jika nomor kombinasi lebih besar dari nomor variabel penampung
+		// maka variabel penampung akan diupdate dengan data tersebut
 		if(finalNumber < kalimat.slice(i,i+2)){
 			finalNumber = kalimat.slice(i,i+2);
 		}
