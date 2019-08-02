@@ -1,9 +1,9 @@
 function konversiMenit(menit) {
-    var sisaMenit = String(menit % 60);
-    var jam = String(Math.trunc(menit/60));
+    var sisaMenit = menit % 60;
+    var jam = Math.trunc(menit/60);
 
     if(sisaMenit <= 9){
-        return (jam + ':' + '0' + sisaMenit);
+        return (jam + ':' + 0 + sisaMenit);
     }
     else
         return (jam + ':' + sisaMenit);
