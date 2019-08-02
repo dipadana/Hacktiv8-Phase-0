@@ -10,9 +10,12 @@ function dataHandling(nomor, nama, tempat, tl, hobi){
     console.log('Nama Lengkap : ' + nama);
     console.log('TTL : ' + tempat + ' ' + tl);
     console.log('Hobi : ' + hobi);
-    console.log(' ')
+    
 }
 
 for(i=0;i<input.length;i++){
     dataHandling(input[i][0],input[i][1],input[i][2],input[i][3],input[0][4])
+    if(i < input.length-1){
+        console.log(' ')
+    }
 }
