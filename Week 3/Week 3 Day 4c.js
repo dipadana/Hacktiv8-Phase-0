@@ -1,20 +1,21 @@
+// Deret Aritmatika
 function tentukanDeretAritmatika(arr) {
-	// mencari selisihnya terlebih dahulu
-	//karena ini deret aritmatika, cukupa angka pertama dan kedua
-	//yang jadi patokan selisihnya
+	// Mencari selisihnya terlebih dahulu,
+	// karena ini deret aritmatika, cukupa angka pertama dan kedua
+	// yang jadi patokan selisihnya
 	var selisih = arr[1] - arr[0];
 
-	// lalu buat sebuah variabel yg menampung angka terkahir dari 
+	// Lalu buat sebuah variabel yg menampung angka terkahir dari 
 	// kumpulan angka tersebut
 	var maxNumber = arr[arr.length-1];
 
-	// lalu, angka terakhir tersebut dikurangi dengan selisih,
+	// Lalu, angka terakhir tersebut dikurangi dengan selisih,
 	// berulang kali, sebanyak pangjang array tersebut
 	for(var i = 0; i < arr.length-1; i++){
 		maxNumber -= selisih;
 	}
 
-	// jika memang deret geometri, maka angka terakhir tersebut,
+	// Jika memang deret geometri, maka angka terakhir tersebut
 	// setelah dikurangi terus menerus, akan menghasilkan 
 	// nilai yang sama dengan angka pertama
 	if(maxNumber == arr[0]){

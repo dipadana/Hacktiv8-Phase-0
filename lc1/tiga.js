@@ -25,7 +25,7 @@ Output:
 1
  */
 
-var height = 8;
+var height = 5;
 // Write code here
 
 var temp = '';

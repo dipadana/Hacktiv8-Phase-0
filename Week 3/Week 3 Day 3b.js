@@ -1,5 +1,6 @@
-
+// Palindrome Angka
 function palindromeGenerator(num){
+  // Merupakan fungsi untuk mencarikan angka palindrome terdekat dari number inputan
   var number = num;
   var palindrome = false;
   while(palindrome == false){
@@ -15,20 +16,23 @@ function palindromeGenerator(num){
 }
 
 function angkaPalindrome(num) {
-  //inisiasi variable
+  // Melakukan inisiasi variable
   var number = num;
+
+  // Melakukan penngecekan apakah angka inputan tersebut adalah palindrome
   var tempNumber = palindromeGenerator(num);
-  // jika angka yg masuk angka 0 - 8 maka akan ditambah 1
+
+  // Jika angka yg masuk angka 0 - 8 maka akan ditambah 1
   if(0 <= number && number <= 8){
     return number + 1;
   }
-  // jika angka yg masuk angka 9 maka akan ditambah 2
+  // Jika angka yg masuk angka 9 maka akan ditambah 2
   else if(number == 9){
     return number + 2;
   }
-  //selain 0 - 9, dilakukan pengecekan apakah angka yg masuk itu palindrome
-  //jika tidak, angka tersebut akan dicarikan palindrome terdekatnya
-  //jika palindrome, angka tersebut akan dicarikan palindrome terdekatnya, juga...
+  //  Selain 0 - 9, dilakukan pengecekan apakah angka yg masuk itu palindrome,
+  //  jika tidak, angka tersebut akan dicarikan palindrome terdekatnya,
+  //  jika palindrome, angka tersebut akan dicarikan palindrome terdekatnya, juga...
   else if(tempNumber == number){
     return palindromeGenerator(number+1);
   }

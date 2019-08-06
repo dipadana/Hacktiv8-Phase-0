@@ -1,3 +1,4 @@
+// Tantangan Array 2 (Melooping menggunakan Array)
 var input = [
     ["0001", "Roman Alamsyah", "Bandar Lampung", "21/05/1989", "Membaca"],
     ["0002", "Dika Sembiring", "Medan", "10/10/1992", "Bermain Gitar"],
@@ -5,17 +6,16 @@ var input = [
     ["0004", "Bintang Senjaya", "Martapura", "6/4/1970", "Berkebun"]
 ]
 
-function dataHandling(nomor, nama, tempat, tl, hobi){
-    console.log('Nomor ID : ' + nomor);
-    console.log('Nama Lengkap : ' + nama);
-    console.log('TTL : ' + tempat + ' ' + tl);
-    console.log('Hobi : ' + hobi);
-    
+function dataHandling(input){
+    for(i=0;i<input.length;i++){
+        console.log('Nomor ID : ' + input[i][0]);
+        console.log('Nama Lengkap : ' + input[i][1]);
+        console.log('TTL : ' + input[i][2] + ' ' + input[i][3]);
+        console.log('Hobi : ' + input[i][4]);
+        if(i < input.length-1){
+            console.log(' ')
+        }
+    }   
 }
 
-for(i=0;i<input.length;i++){
-    dataHandling(input[i][0],input[i][1],input[i][2],input[i][3],input[0][4])
-    if(i < input.length-1){
-        console.log(' ')
-    }
-}
+dataHandling(input);

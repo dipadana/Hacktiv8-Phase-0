@@ -1,3 +1,4 @@
+// Hitung Jumlah Kata
 function hitungJumlahKata(kalimat) {
     var tempKalimat = 0;
     for(var i = 0; i<kalimat.length;i++){

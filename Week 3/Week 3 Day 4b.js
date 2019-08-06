@@ -1,25 +1,26 @@
+// Perkalian Unik
 function perkalianUnik(arr) {
   var tempNumber = 1;
   var finalArr = [];
   var tempArr = 0;
 
   for(var i = 0; i < arr.length; i++){
-    // simpan dulu nilai urutan array yang akan dihilangkan
+    // Simpan dulu nilai indeks array yang akan dihilangkan
     tempArr = arr[i];
 
-    // lalu rubah nilai array tersebut menjadi 1
-    //karena apapun yg dikali 1 tidak akan mempengaruhi hasil kali total lainnya (seolah" hilang)
+    // Lalu rubah nilai array tersebut menjadi 1,
+    // Karena apapun yg dikali 1 tidak akan mempengaruhi hasil kali total lainnya (seolah" hilang)
     arr[i]  = 1;
 
-    //proses hitung kali array sisanya, hasilnya dimasukan kedalam array baru sesuai urutan
+    // Proses hitung kali array sisanya, hasilnya dimasukan kedalam array baru sesuai urutan
     for(var j = 0; j < arr.length; j++){
       tempNumber *= arr[j];
     }
 
-    // hasil untuk array sudah didapat, diulang terus sebanyak panjang array
+    // Hasil untuk array sudah didapat
     finalArr[i] = tempNumber;
 
-    // ketika satu putaran hitungan selesai, semua variable temporary di reset
+    // Ketika satu putaran hitungan selesai, semua variable temporary di reset, mulai putaran selanjutnya
     tempNumber = 1;
     arr[i] = tempArr;
     tempArr = 0;

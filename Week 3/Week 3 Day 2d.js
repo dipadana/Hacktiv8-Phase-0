@@ -1,10 +1,14 @@
-var arr = ["0001", "Roman Alamsyah", "Bandar Lampung", "21/05/1989", "Membaca"];
+// Tantangan Array 3 (Array Join, Split, Slice, Splice, Sort)
+var data = ["0001", "Roman Alamsyah", "Bandar Lampung", "21/05/1989", "Membaca"];
 
-function dataHandling2(){
+function dataHandling2(array){
+    // Menggunakan splice
+    var arr = array;
     arr.splice(1,2,"Roman Alamsyah Elsharawy", "Provinsi Bandar Lampung");
     arr.splice(4,1,"Pria","SMA International Metro");
     console.log(arr);
 
+    // Menggunakan split
     var month = arr[3].split("/");
     var namaBulan = ' ';
     switch (Number(month[1])){
@@ -47,17 +51,19 @@ function dataHandling2(){
     }
     console.log(namaBulan.trim());
 
+    // Menggunaan sort secara descending
     var tempMonth = [];
     for(var i=0;i<month.length;i++){
-        tempMonth[i]=Number(month[i]);
+        tempMonth[i]=month[i];
     }
-    tempMonth.sort(function(value1, value2) { return value1 < value2 ;});
-    console.log(tempMonth.sort());
+    tempMonth.sort(function(value1, value2) { return value2 - value1 ;});
+    console.log(tempMonth);
 
+    // Menggunakan join
     console.log(month.join('-'));
 
+    //Menggunakan slice
     console.log(arr[1].slice(0,15));
+}
 
-}//function
-
-dataHandling2();
+dataHandling2(data);

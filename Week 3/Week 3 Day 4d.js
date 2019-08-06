@@ -1,3 +1,4 @@
+// Deret Geometri
 function tentukanDeretGeometri(arr) {
 	var selisih = arr[1] / arr[0];
 	var maxNumber = arr[arr.length-1];

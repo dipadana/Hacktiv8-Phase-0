@@ -1,3 +1,4 @@
+// Cari Mean
 function cariMean(arr) {
     var tempNumber = 0;
     for(var i = 0; i < arr.length; i++){
