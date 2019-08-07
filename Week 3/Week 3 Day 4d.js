@@ -1,7 +1,17 @@
 // Deret Geometri
 function tentukanDeretGeometri(arr) {
+	// Mencari selisihnya terlebih dahulu,
+	// karena ini deret geometri, cukup angka pertama dan kedua
+	// yang jadi patokan selisihnya
 	var selisih = arr[1] / arr[0];
+
+	// Lalu buat sebuah variabel yg menampung angka terkahir dari 
+	// kumpulan angka tersebut
 	var maxNumber = arr[arr.length-1];
+
+	// Lalu, angka terakhir tersebut dibagi dengan selisih,
+	// berulang kali, sebanyak pangjang array tersebut.
+	// Setiap mengurangi satu kali wajib di cek 
 	for(var i = 0; i < arr.length-1; i++){
 		maxNumber /= selisih;
 		if(maxNumber != arr[arr.length-2-i]){
@@ -9,6 +19,9 @@ function tentukanDeretGeometri(arr) {
 			break;
 		}
 	}
+	// Jika memang deret geometri, maka angka terakhir tersebut
+	// setelah dibagi terus menerus, akan menghasilkan nilai yang sama dengan angka pertama.
+	// Jika semua angka sudah dicek, dan tepat, maka akan mereturn true
 	if(maxNumber == 'error'){
 		return false;
 	}
@@ -16,6 +29,8 @@ function tentukanDeretGeometri(arr) {
 		return true;
 	}
 }
+
+
 
 // TEST CASES
 console.log(tentukanDeretGeometri([1, 3, 9, 27, 81])); // true

@@ -18,7 +18,7 @@ function targetTerdekat(arr) {
 			locationX.push(idx);
 			idx = arr.indexOf(element, idx + 1);
 		}
-
+		
 		// Setelah dicatat semua lokasi x, selanjutnya adalah untuk mengurangi indeks o dan indeks x
 		// Semua hasil diabsolutkan agar tidak ada nilai minus
 		for(var i = 0; i < locationX.length; i++){

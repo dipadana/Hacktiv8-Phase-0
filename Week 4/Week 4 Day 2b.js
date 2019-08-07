@@ -25,7 +25,8 @@ function fpb(num1, num2) {
         }
     }
 
-    // Mengabungkan kedua angka hasil bagi tadi, kedalam satu array, lalu disort agar mudah untuk mencari FPB nya
+    // Mengabungkan kedua angka hasil bagi tadi, 
+    // kedalam satu array, lalu disort agar mudah untuk mencari FPB nya
     temp3 = temp1.concat(temp2);
     temp3.sort(function(value1, value2){return value1-value2})
     

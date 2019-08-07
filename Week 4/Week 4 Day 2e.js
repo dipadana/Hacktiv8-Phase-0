@@ -1,6 +1,10 @@
 // Ubah Huruf
 function ubahHuruf(kata) {
+    // Membuat variable tampungan berupa string kosong
     var temp = '';
+    // Dilakukan pengecekan terhadap semua huruf,
+    // lalu di switch case ke huruf setelahnya,
+    // lalu hasilnya dimasukkan kedalam tampungan
     for(var xo = 0; xo < kata.length; xo++){
         switch(kata[xo]){
             case 'a' : temp += 'b'; break;
@@ -36,6 +40,9 @@ function ubahHuruf(kata) {
             case 'z' : temp += 'a'; break;
         }
     }
+
+    // Setelah semua kata di swith case, 
+    // semua sudah dijadikan satu kata, maka langsung di renturn
     return temp;
 }
 
