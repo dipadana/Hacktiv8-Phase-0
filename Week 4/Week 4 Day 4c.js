@@ -15,10 +15,6 @@ function countProfit(arr) {
                 amountTemp[0] -= arr[i].amount;
                 shoppersName[0].push(arr[i].name);
                 profit[0] = listBarang[0][1]*(listBarang[0][2]-amountTemp[0]);
-                console.log(amountTemp[0])
-                console.log(profit)
-                console.log(listBarang[0][2])
-                console.log(shoppersName[0])
             }
         }
         else if(arr[i].product == listBarang[1][0]){
@@ -26,9 +22,6 @@ function countProfit(arr) {
                 amountTemp[1] -= arr[i].amount;
                 shoppersName[1].push(arr[i].name);
                 profit[1] = listBarang[1][1]*(listBarang[1][2]-amountTemp[1]);
-                console.log(profit)
-                console.log(listBarang[1][2])
-                console.log(shoppersName[1])
             }
         }
         else if(arr[i].product == listBarang[2][0]){
@@ -36,15 +29,8 @@ function countProfit(arr) {
                 amountTemp[2]-= arr[i].amount;
                 shoppersName[2].push(arr[i].name);
                 profit[2] = listBarang[2][1]*((listBarang[2][2]-amountTemp[2]));
-                console.log(profit)
-                console.log(listBarang[2][2])
-                console.log(shoppersName[2])
-            }
         }
     }
-
-    console.log(shoppersName);
-    console.log(profit)
 
     var objTemp = [];
     for(i = 0; i < listBarang.length; i++){
@@ -55,12 +41,10 @@ function countProfit(arr) {
             totalProfit : profit[i]
         }
         objTemp[i] = obj;
-        // console.log(obj)
     }
-
     return objTemp;
-
 }
+
 
   // TEST CASES
 console.log(countProfit([
@@ -124,3 +108,11 @@ console.log(countProfit([])); //[]
 //   shoppers: [],
 //   leftOver: 1,
 //   totalProfit: 0 } ]
+
+ // function calculate (amountTemp, buyersAmounts, shoppersName, customerName, profit, price, amount){
+    //     if(amountTemp >= buyersAmounts){
+    //         amountTemp -= buyersAmounts;
+    //         shoppersName.push(customerName);
+    //         profit = price*(amount - amountTemp);
+    //     }
+    // }
