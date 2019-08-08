@@ -1,21 +1,24 @@
 // Change Me
-function changeMe(arr) {
-    var person = [];
-    for(var i = 0; i < arr.length; i++){
-            person[i].firstName = arr[i][0];
-            person[i].lastName = arr[i][1];
-            person[i].gender = arr[i][2];
-            person[i].age = 2019 - arr[i][3];
-        }
-
-    for(var j = 0; j < arr.length; j++){
-        var fullname = j + '.' + person[i].firstName + person[i].lastName;
-        console.log(fullname, person)
+function changeMe(array) {
+    // Untuk memberi asign pada objectnya, dilakuka perulangan sebanyak panjang array
+    for(var i = 0; i < array.length; i++){
+        console.log((i+1) + '.' + array[i][0] + ' ' + array[i][1] + ':')
+            // Melakukan assign object seprti biasa
+            var object = {
+                firstName: array[i][0],
+                lastName: array[i][1],
+                gender: array[i][2],
+                // Ini merupakan perpendekan dari kondisi if, saya menyebutnya if inline
+                age: !array[i][3] ? 'Invalid Birth Year' : new Date().getFullYear() - array[i][3]
+            
+            }
+        console.log(object)
     }
 }
 
   // TEST CASES
-  changeMe([['Christ', 'Evans', 'Male', 1982], ['Robert', 'Downey', 'Male']]); // 1. Christ Evans:
+changeMe([['Christ', 'Evans', 'Male', 1982], ['Robert', 'Downey', 'Male']]); 
+  // 1. Christ Evans:
   // { firstName: 'Christ',
   //   lastName: 'Evans',
   //   gender: 'Male',
