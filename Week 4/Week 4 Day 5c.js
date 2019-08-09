@@ -1,3 +1,8 @@
+/*
+SEMUA OUTPUT FUNGSI YANG DIHASILKAN AKAN SECARA OTOMATIS
+DIURUTKAN BERDSARKAN ABJAD 'KELASNYA'
+*/
+
 // function for dynamic sorting (Fungsi dinamis untuk melakukan sorting terhadap key object)
 function compareValues(key, order='asc') {
     return function(a, b) {
@@ -70,16 +75,14 @@ function highestScore (students) {
     for(i = 0; i < score.length; i++){
         score[i].sort(compareValues('score','desc'));
         final[score[i][0].class] = {
-                name : score[i][0].name,
-                score : score[i][0].score
-            }
+            name : score[i][0].name,
+            score : score[i][0].score
         }
+    }
         // Jika semua sudah, maka akan direturn sebagai object,
         // data yang direntrun merupakan data yang sudah diurutkan
         return final;
-    }
-    
-
+}
 
 // TEST CASE
 console.log(highestScore([
@@ -107,6 +110,16 @@ console.log(highestScore([
     name: 'Viktor',
     score: 80,
     class: 'tigers'
+},
+{
+    name: 'Dipadana',
+    score: 80,
+    class: 'elephant'
+},
+{
+    name: 'Putu',
+    score: 81,
+    class: 'elephant'
 }
 ]));
 
