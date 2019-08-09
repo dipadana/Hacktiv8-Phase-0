@@ -26,4 +26,3 @@ function angkaTerbesar (arr) {
 
 angkaTerkecil(arr);
 angkaTerbesar(arr);
-

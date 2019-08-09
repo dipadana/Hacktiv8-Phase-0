@@ -34,7 +34,6 @@ function change(uang){
         }
     } 
     return money1;
-
 }
 
 // Fungsi utama yang berfungsi mencetak object yang yang sudah ditentukan 
@@ -45,8 +44,8 @@ function shoppingTime(memberId, money) {
         listPurchased : purchased(money),
         changeMoney : change(money),
     }
-
-    // Menentukan kondisi sesuai permintaan
+    
+    // Menentukan output sesuai kondisi permintaan
     if(!memberId){
         return 'Mohon maaf, toko X hanya berlaku untuk member saja';
     }
