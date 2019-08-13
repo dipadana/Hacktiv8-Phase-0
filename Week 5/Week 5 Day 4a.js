@@ -1,3 +1,4 @@
+// Hapus Simbol
 function hapusSimbol(str) {
     return str.match(/[abcdefghijklmnopqrstuvwxyz0123456789]+/gi).join('');
 }

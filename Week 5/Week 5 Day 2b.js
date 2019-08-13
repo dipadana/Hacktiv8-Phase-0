@@ -63,8 +63,7 @@ function passwordGenerator (name) {
     return removeSpaces(setLowerUpperCase(reverseWord(changeVocals(name))))
 }
 
-console.log(passwordGenerator('Sergei Dragunov'));
-console.log(passwordGenerator('VPNVGBRdJFGRFs'));  // 'VPNVGBRdJFGRFs'
+console.log(passwordGenerator('Sergei Dragunov')); // 'VPNVGBRdJFGRFs'
 console.log(passwordGenerator('Dimitri Wahyudiputra')); // 'BRTVPJDVYHBwJRTJMJd'
 console.log(passwordGenerator('Alexei')); // 'JFXFLb'
 console.log(passwordGenerator('Alex')); // 'Minimal karakter yang diinputkan adalah 5 karakter'

@@ -1,12 +1,9 @@
 // Kali Terus Rekursif
-
 function kaliDigitRekursif(angka){
+    // Memiliki algoritma yang sama dengan totalDigitRekursif,
+    // tetpi '+' diganti dengan '*'
     var arr = String(angka)
-
     var length = arr.length-1;
-
-    console.log(arr);
-
     if(arr.length == 1){
         return arr[length];
     }
@@ -16,18 +13,21 @@ function kaliDigitRekursif(angka){
 }
 
 function kaliTerusRekursif(angka) {
+    // Mengkonversi data menjadi string, agar bisa diakses panjang datanya
     var arr = String(angka)
-    console.log(angka)
-    console.log(arr.length)
+
+    // Ketika panjang data yang masuk adalah satu, 
+    // maka inputan data akan langsung direturn 
     if(arr.length == 1){
         return angka;
     }
+
+    // Tapi ketika data yang masuk memiliki lebih dari satu digit, 
+    // maka fungsi rekursif akan langsung dijalankan
     else{
         return kaliTerusRekursif(kaliDigitRekursif(angka));
     }
 }
-
-
 
 // TEST CASES
 console.log(kaliTerusRekursif(66)); // 8
