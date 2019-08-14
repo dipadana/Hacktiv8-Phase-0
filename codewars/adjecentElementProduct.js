@@ -7,6 +7,6 @@ function adjacentElementsProduct(array) {
     return temp;
 }
 
-console.log(adjacentElementsProduct([1,2,3]))
-console.log(adjacentElementsProduct([1,2,3,4]))  //6
-console.log(adjacentElementsProduct([-1,2,-3,4])) 
+console.log(adjacentElementsProduct([1,2,3])) // 6
+console.log(adjacentElementsProduct([1,2,3,4]))  // 12
+console.log(adjacentElementsProduct([-1,2,-3,4])) // -2
