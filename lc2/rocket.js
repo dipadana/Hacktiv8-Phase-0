@@ -45,13 +45,21 @@ function finder(treasure) {
             case '9' : count -= 9; break;
         }
     }
-  
+    if(treasure == '' || !treasure){
+    	return 'Harta karun tidak ditemukan';
+    }
+    else if(count == 0){
+    	return 'Harta karun telah direbut bajak laut lain!';
+	}
+	else{
+		return 'Berhasil memperoleh ' + count + ' harta karun';
+	}
 }
-  
-  
-//   console.log(finder(['harta', 'karun'])) // Berhasil memperoleh 10 harta karun
+
+
+  console.log(finder(['harta', 'karun'])) // Berhasil memperoleh 10 harta karun
   console.log(finder(['treasure', '3', 'hunt'])) // Berhasil memperoleh 6 harta karun
-//   console.log(finder(['assassins', 'cr3ed', 'black', 'f1ag'])) // Berhasil memperoleh 3 harta karun
-//   console.log(finder(['kjsadf', 'hlkjhasfd', 'lxcmvnbzcv', 'baksljdslkjdfh', 'awiuekjsadf', 'jkagfkjg99'])) // Harta karun telah direbut bajak laut lain!
-//   console.log(finder([''])) // Harta karun tidak ditemukan
-//   console.log(finder([])) // Harta karun tidak ditemukan
+  console.log(finder(['assassins', 'cr3ed', 'black', 'f1ag'])) // Berhasil memperoleh 3 harta karun
+  console.log(finder(['kjsadf', 'hlkjhasfd', 'lxcmvnbzcv', 'baksljdslkjdfh', 'awiuekjsadf', 'jkagfkjg99'])) // Harta karun telah direbut bajak laut lain!
+  console.log(finder([''])) // Harta karun tidak ditemukan
+  console.log(finder([])) // Harta karun tidak ditemukan

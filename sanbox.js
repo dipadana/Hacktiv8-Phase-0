@@ -25,3 +25,5 @@ var value = '675-805-714';
 var numberPattern = /\d+/g;
 value = value.match( numberPattern ).join([]);
 console.log(typeof Number(value))
+
+console.log('the-stel_ +????warl'.split(/[- +?_]+/))
