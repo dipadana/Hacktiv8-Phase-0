@@ -28,6 +28,13 @@ function compareValues(key, order='asc') {
     };
 }
 
+if(3 > 2){
+    return true;
+}
+else if(3 < 2){
+    return false;
+}
+
 // Highest Score
 function highestScore (students) {
     // Pertama dilakukan sort terhadap data tersebut,
