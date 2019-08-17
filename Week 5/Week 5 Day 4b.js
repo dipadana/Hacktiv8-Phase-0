@@ -3,6 +3,7 @@ function cariPelaku(str) {
     return str.match(/abc/g).length;
 }
 
+
 // TEST CASES
 console.log(cariPelaku('mabcvabc')); // 2
 console.log(cariPelaku('abcdabdc')); // 1
