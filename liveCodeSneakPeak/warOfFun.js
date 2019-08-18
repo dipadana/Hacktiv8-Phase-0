@@ -27,77 +27,73 @@ OUTPUT: pemenangnya adalah toni
  1. Dilarang menggunakan built in function .sort()
 */
 
-//fun.push(temp[i].match(/fun/gi))
+function warOfFun(arr){
+	// Pertama melakukan pengelompokkan data,
+	// dikelompokkan sesuai dengan indeks orang yang memiliki hasil data
+	var temp2 = [];
+	for(var i = 0; i < arr.length; i++){
+		var temp = [];
+		for(var j = 1; j < arr.length; j++){
+			temp.push(arr[j][i])
+		}
+		temp2.push(temp);
+	}
+	console.log(temp2)
+	
+	// Data yang sudah masuk, dihitung jumlah kata 'fun'
+	// yang dimiliki oleh tiap=tiap orang.
+	// Hasil perhitungan tersebut dikelompokkan kedalam array
+	var temp3 = [];
+	for(var i = 0; i < temp2.length; i++){
+		var count = 0;
+		for(var j = 0; j < temp2[i].length; j++){
+			if(temp2[i][j] == 'fun'){
+				count++;
+			}
+		}
+		temp3.push(count);
+	}
+	console.log(temp3)
 
-function warOfFun (arr) {
-    if(arr.length == 0){
-        return 'mohon maaf tidak ada pemenang';
-    }
-    var temp = [];
-    var result = 0;
-    var fun = [];
-    for(var i = 0; i < arr[0].length; i++){
-        fun.push(0);
-    }
-    console.log(fun)
-    var obj = {};
-    
-    for(var i = 0; i < arr.length; i++){
-        for(var j = 1; j < arr.length; j++){
-            temp.push(arr[j][i])
-        }
-        obj[arr[0][i]] = temp;
-        temp = [];
-    }
+	// Data hasil perhitungan tadi, 
+	// dihitung kembali, siapa yang memiliki jumlah kata 'fun'
+	// paling banyak
+	var temp4 = 0;
+	var result = -1;
+	for(var i = 0; i < temp3.length; i++){
+		if(temp4 < temp3[i]){
+			temp4 = temp3[i];
+			result = i;
+		}
+	}
+	console.log(result)
 
-    console.log(obj)
-    
-    for(var i = 0; i < arr.length; i++){
-        for(var j = 0; j < obj[arr[0][i]].length; j++){
-            if(obj[arr[0][i]][j] == 'fun'){
-                fun[i]++;
-            }
-        }
-    }
-
-    console.log(fun)
-
-    // cari jumlah fun terbanyak, catat indeknya
-    var temp = 0;
-    for(var i = 0; i < fun.length; i++){
-        if(temp < fun[i]){
-            temp = fun[i];
-            result = i;
-        }
-    }
-
-    console.log(result)
-
-    return result == 0 ? 'mohon maaf tidak ada pemenang' : 'pemenangnya adalah ' + arr[0][result];    
+	// Lalu direturn sesuai dengan ketentuan
+	return result == -1 ? 'mohon maaf tidak ada pemenang' :'pememangnya adalah ' + arr[0][result];
 }
 
 // TEST CASE
 console.log(warOfFun([
-   ['andre', 'toni', 'toti'],
-   ['risk', 'fun', 'go'],
-   ['humble', 'psyhco', 'strong']
- ]))
- // pemenangnya adalah toni
+ ['andre', 'toni', 'toti'],
+ ['risk', 'fun', 'go'],
+ ['humble', 'psyhco', 'strong']
+]))
+// pemenangnya adalah toni
 
- console.log(warOfFun([
-   ['andre', 'toni', 'toti', 'tito'],
-   ['fun', 'fun', 'fun'],
-   ['fun', 'fun'],
-   ['nonfun', 'fun', 'fun', 'fun']
- ]))
- // pemenangnya adalah toni
+console.log(warOfFun([
+ ['andre', 'toni', 'toti', 'tito'],
+ ['fun', 'fun', 'fun'],
+ ['fun', 'fun'],
+ ['nonfun', 'fun', 'fun', 'fun']
+]))
+// pemenangnya adalah toni
 
- console.log(warOfFun([
-   ['andre', 'toni'],
-   ['risk', 'go'],
-   ['humble', 'strong']
- ]))
- // mohon maaf tidak ada pemenangnya
+console.log(warOfFun([
+ ['andre', 'toni'],
+ ['risk', 'go'],
+ ['humble', 'strong']
+]))
+// mohon maaf tidak ada pemenangnya
 
- console.log(warOfFun([]))
- // mohon maaf tidak ada pemenangnya
+console.log(warOfFun([]))
+// mohon maaf tidak ada pemenangnya

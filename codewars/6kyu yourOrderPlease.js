@@ -24,4 +24,5 @@ function sort(str){
 console.log(sort("is2 Thi1s T4est 3a")) // "Thi1s is2 3a T4est"
 console.log(sort("4of Fo1r pe6ople g3ood th5e the2" )) // "Fo1r the2 g3ood 4of th5e pe6ople"
 console.log(sort("")) // ""
+console.log(sort('4of Fo-10r       pe6000ople   g3ood    th5e  the2')) //// "Fo-10r the2 g3ood 4of th5e pe6000ople"
 

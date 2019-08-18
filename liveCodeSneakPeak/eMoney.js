@@ -1,6 +1,3 @@
-// Live Coding Week 5 - Question 1
-// Andreas Sosilo - Hacktiv8 Batch 34 - Humble Fox
-
 /*
 ===========
 eMoneySplit
@@ -17,6 +14,7 @@ OUTPUT: terbanyak adalah bagas dan terdikit adalah ali
 1. WAJIB menggunakan algoritma/pseudocode atau -50 poin
 */
 
+// Merupakan standart function untuk sort
 function sortAsc(arr){
     var max = 0;
     for(var i = 0; i < arr.length-1; i++){
@@ -31,39 +29,36 @@ function sortAsc(arr){
     return arr;
 }
 
-function eMoneySplit (stringData) {
-    var arr = stringData.split(',');
-
-    console.log(arr)
-
-    var temp = [];
-    var temp2 = [];
-
-    // Rubah data jadi object
-    for(var i = 0; i < arr.length; i++){
-        temp.push(arr[i].split(':'));
+function eMoneySplit(str){
+    // Pertama melakukan split data yang masuk sebanyak dua kali,
+    // pertama menghilangkan tanda ',' dan kedua menghilangkan tanda ':'
+    // kedua proses split ini akan menghasilkan array dua dimensi
+    var temp = str.split(',');
+    var arr = [];
+    for(var i = 0; i < temp.length; i++){
+        arr.push(temp[i].split(':'));
     }
 
-    console.log(temp)
-
-    for(var i = 0; i < temp.length; i++){
-        temp2.push({
-            name : temp[i][0],
-            money : Number(temp[i][1])
+    // Lalu, membuat object dari array dua dimensi yang dihasilkan
+    var obj = [];
+    for(var i = 0 ; i < arr.length; i++){
+        obj.push({
+            name : arr[i][0],
+            money : Number(arr[i][1])
         })
     }
 
-    console.log(temp2)
-
-    // Object di sort bersarkan score
-    sortAsc(temp2);
-
-    return !stringData ? 'tidak ada catatan eMoney' : 'Terbanyak adalah ' + temp2[temp2.length-1].name + ' dan terdikit adalah ' + temp2[0].name
+    // Object yang telah terbentuk, lalu di urutkan berdasarkan nilai uang
+    // dari yang terkecil ke yang terbesar
+    sortAsc(obj);
+    
+    // Lalu dilakukan pengecekakan, jika tidak ada string yg masuk, 
+    // maka langsung direturn tidak ada uang yang masuk,
+    // tapi jika ada, direturn pemilik transaksi terbanyak dan yang paling sedikit
+    return str == '' ? 'tidak ada catatan eMoney' : 'terbanyak adalah ' + obj[obj.length-1].name + ' dan terdikit adalah ' +obj[0].name;
 }
 
-
-
-
+// TEST CASE
 console.log(eMoneySplit('bagus:200000,ali:20000,bagas:300000,andre:50000'))
 // terbanyak adalah bagas dan terdikit adalah ali
 console.log(eMoneySplit('andre:50000'))

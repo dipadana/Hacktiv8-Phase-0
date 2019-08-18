@@ -29,8 +29,10 @@ OUTPUT: [
   1. Diasumsikan pemenang akan selalu ada, dan clans tidak pernah kosong.
   2. Dilarang menggunakan built in function .filter(), .map(), .forEach(), dan .reduce()
 */
+
+// Old Version
 var tempHealt = 0;
-function lotus(arr){
+function lotusOld(arr){
   var output = [];
   for(var i = 0; i < arr.length; i++){
     for(var j = 0; j < arr.length; j++){
@@ -46,6 +48,35 @@ function lotus(arr){
     }
   }
   return (output);
+}
+
+// New version
+function lotus(arr){
+	// Membuat sebuat arra kosong sebagai tampungan
+	var output = [];
+
+	// Dilakukan proses penguragan totalHealt bersarkan total attack yang diberikan
+	for(var i = 0; i < arr.length; i++){
+		for(var j = 0; j < arr.length; j++){
+			// Jika attack yg masuk sesuai dengan clan yang di cek, maka langsung dikurangi
+			if(arr[i].attack == arr[j].clan){
+				arr[j].totalHealth = arr[j].totalHealth - arr[i].totalAttack;
+			}
+		}
+	}
+
+	// Setelah semua selesai dihitung,
+	// maka langsung di masukkan object berdasarkan 
+	// hasil nilai perhitungan ke dalam array tampungan
+	for(var i = 0 ; i < arr.length; i++){
+		if(arr[i].totalHealth > 0){
+			output.push({
+				clan : arr[i].clan,
+				totalHealth : arr[i].totalHealth
+			})
+		}
+	}
+	return output;
 }
 
 var input = [
