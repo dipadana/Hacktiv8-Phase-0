@@ -1,5 +1,3 @@
-// Live Coding Week 5 - Question 2
-// Andreas Sosilo - Hacktiv8 Batch 34 - Humble Fox
 /*
 ========
 warOfFun

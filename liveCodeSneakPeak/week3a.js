@@ -1,6 +1,3 @@
-// Live Coding Week 4 - Question 1
-// Andreas Sosilo - Hacktiv8 Batch 34 - Humble Fox
-
     /*
     ////////////
     sumTheNumber
