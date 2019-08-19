@@ -64,11 +64,14 @@ console.log(sortAsc(latihan, 3, 'dsc'));
   ]
 */
 
+// Descending function
 function sortDsc(arr){
   var max = 0;
   for(var i = 0; i < arr.length-1; i++){
       for(var j = i+1; j < arr.length; j++){
-
+        
+        // inti utama dari proses sort, melakukan penukaran variable
+        // untuk mendapatkan urutan nilai yang diinginkan
           if(arr[i].score < arr[j].score){
               max = arr[i];
               arr[i] = arr[j];
