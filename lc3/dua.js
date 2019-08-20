@@ -45,7 +45,6 @@ function dataSiswa(str){
 	for(var i = 0; i < data1.length; i++){
 		data2.push(mySplit(data1[i],'-'));
 	}
-	console.log(data2)
 	var output = [];
 	for(var i = 0; i < data1.length; i++){
 		output.push({

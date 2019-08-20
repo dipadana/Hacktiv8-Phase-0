@@ -37,6 +37,26 @@ OUTPUT:
 | dec | Branch-1 IN: 4000 | OUT: 2200 | Branch-2 IN: 3000 | OUT: 1700 | Branch-3 IN: 4000 | OUT: 2200 |
 */
 
+function printBranch(arr){
+  var bulan = ['jan', 'feb', 'march', 'april', 'mei', 'jun', 'jul', 'august', 'sept', 'oct', 'nov', 'dec'];
+
+  var obj = {};
+  for(var i = 0; i < bulan.length; i++){
+    obj[bulan[i]] = '| '+bulan[i]+' | '
+  }
+  console.log(obj)
+
+  for(var i = 0; i < arr.length; i++){
+    for(var j = 0; j < bulan.length; j++){
+      obj[bulan[j]] += 'Branch-' + (i+1) + ' IN: ' + arr[i][0][j] + ' | OUT: ' + arr[i][1][j] + ' | ';
+    }
+  }
+
+  for(var i = 0; i < bulan.length; i++){
+    console.log(obj[bulan[i]]);
+  }
+}
+
 // TEST CASE 1
 var data1 = [
   [
@@ -53,7 +73,7 @@ var data1 = [
   ]
 ]
 
-console.log(printBranch(data1))
+printBranch(data1)
 
 /*
   | jan | Branch-1 IN: 1000 | OUT:500 |Branch-2 IN: 1000 | OUT:700 |Branch-3 IN: 2000 | OUT:500 |
@@ -78,7 +98,7 @@ var data2 = [
   ]
 ]
 
-console.log(printBranch(data2))
+printBranch(data2)
 /*
   | jan | Branch-1 IN: 1000 | OUT:500 |
   | feb | Branch-1 IN: 1500 | OUT:700 |

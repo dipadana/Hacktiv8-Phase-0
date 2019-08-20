@@ -27,40 +27,47 @@ Standard kelulusan adalah minimum 70.
 */
 
 // DynamicCode
-function rapotAsrama2(arr) {
-	var output = [];
-	
-	// buat banyak obejct sejumlah kelas yang ada
-	for(var i = 0; i < arr.length; i++){
-		if(!output[arr[i].asrama] ){
-			// output[i] = {
-			// 	asrama = arr[i].asrama,
+function dynamicGrouping(arr){
+  var output = [];
+  arr.sort();
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i] != arr[i+1]){
+      output.push(arr[i])
+    }
+  }
+  return output;
+}
 
-			// }
-		}
-	}
+function rapotAsrama(arr) {
+  var output = [];
+  var asrama = [];
+  var temp = [];
+  for(var i = 0; i < arr.length; i++){
+    asrama.push(arr[i].asrama)
+  }
 
-	// Lalu dikelompokkan
-	for(var i = 0; i < arr.length; i++){
-		if(!output[arr[i].asrama]){
-			output[arr[i].asrama];
-			output[arr[i].lulus] = [];
-			output[arr[i].gagal] = [];
-		}
-		else{
-			if(arr[i].nilai >= 75){
-				output[arr[i].lulus].push(arr[i].nama);
-			}
-			else{
-				output[arr[i].gagal].push(arr[i].nama);
-			}
-		}	
-	}
-	console.log(output)
+  temp = dynamicGrouping(asrama)
+
+  for(var i = 0; i < temp.length; i++){
+    output.push({asrama : temp[i], gagal:[], lulus:[]})
+  }
+  for(var i = 0; i < arr.length; i++){
+    for(var j = 0; j < output.length; j++){
+      if(arr[i].asrama == output[j].asrama){
+        if(arr[i].nilai >= 70){
+          output[j].lulus.push(arr[i].nama)
+        }
+        else{
+          output[j].gagal.push(arr[i].nama)
+        }
+      }
+    }
+  }
+  return output;
 }
 
 // Hardcode
-function rapotAsrama(arr) {
+function rapotAsrama2(arr) {
 	var output = [{asrama: 'Griffindor',lulus:[], gagal:[]},{asrama: 'Ravenclaw',lulus:[], gagal:[]},{asrama: 'Slyterin',lulus:[], gagal:[]}];
 	for(var i = 0; i < arr.length; i++){
 		for(var j = 0; j < output.length; j++){
