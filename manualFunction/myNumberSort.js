@@ -1,4 +1,5 @@
 // Mengurutkan angka dari terbesar ke terkecil
+// Belum di cek untuk huruf
 
 var arr = [4,3,2,8,7,9,1];
 
