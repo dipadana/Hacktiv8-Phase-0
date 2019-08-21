@@ -1,3 +1,5 @@
+// Piramid Number 
+
 function pir(num){
     var temp = '';
     for(var i = num; i > 1 ; i--){

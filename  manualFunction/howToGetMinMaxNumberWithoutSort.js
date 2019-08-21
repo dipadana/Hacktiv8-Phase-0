@@ -7,10 +7,9 @@ function angkaTerkecil (arr) {
     for(var i = 0; i < arr.length; i++){
         if(temp > arr[i]){
             temp = arr[i]
-            console.log(temp)
         }
     }
-    console.log(temp)
+    return temp;
 }
 
 function angkaTerbesar (arr) {
@@ -18,11 +17,10 @@ function angkaTerbesar (arr) {
     for(var i = 0; i < arr.length; i++){
         if(temp < arr[i]){
             temp = arr[i]
-            console.log(temp)
         }
     }
-    console.log(temp)
+    return temp
 }
 
-angkaTerkecil(arr);
-angkaTerbesar(arr);
+console.log(angkaTerbesar(arr));
+console.log(angkaTerkecil(arr));

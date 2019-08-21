@@ -1,6 +1,8 @@
+// Mengurutkan angka dari terbesar ke terkecil
+
 var arr = [4,3,2,8,7,9,1];
 
-function bubbleSort(arr){
+function mySort(arr){
     var temp = 0;
     for(var i = 0; i < arr.length-1; i++){
         for(var j = i+1; j < arr.length; j++){
@@ -16,4 +18,4 @@ function bubbleSort(arr){
     return arr;
 }
 
-console.log(bubbleSort(arr));
+console.log(mySort(arr));
