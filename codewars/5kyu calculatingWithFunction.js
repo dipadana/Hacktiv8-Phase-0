@@ -104,17 +104,7 @@ function dividedBy(a=1){
     return '/' + a;
 }
 
-
-
-
-
-
-
-
-
-
-
-
+// TEST CASE
 console.log(five('-1'))
 console.log(nine(dividedBy(two()))); // must return 35
 console.log(Math.floor())

@@ -23,6 +23,6 @@ function sec(seconds){
     return jam + ':' + menit + ':' + detik;
 }
 
-console.log(sec(3660)); // 1 1 1 1 (1 day, 1 hour, 1 min and 1 seconds)
-console.log(sec(93784)); // 1 2 3 4 (1 day, 2 hours, 3 mins, 4 seconds)
-console.log(sec(359999)); 
+console.log(sec(3660)); // 01:01:00
+console.log(sec(93784)); // 26:03:04
+console.log(sec(359999)); // 99:59:59

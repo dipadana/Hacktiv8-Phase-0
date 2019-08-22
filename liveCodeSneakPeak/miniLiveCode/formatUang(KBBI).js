@@ -17,7 +17,6 @@ function uang(num){
     var output = '';
     var length = 3;
 
-
     for(var i = str.length-1; i >= 0; i--){
         if(temp.length == length){
             temp.unshift('.')
