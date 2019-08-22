@@ -26,6 +26,11 @@
         1. dilarang menggunakan built in function .split, .reversed, .join, .filter, .map dan sejenisnya
     */
 
+
+// Untuk menyelesaikan soal diatas, saya mempergunakan banyak fungsi karena
+// banyaknya langkah-langkah yang diperlukan. Sehingga akan sangat rumit jika
+// dijadikan satu fungsi saja
+
 function angkaPrima(num){
     for(var i = 2; i < num; i++){
         if(num % i === 0){
@@ -68,6 +73,8 @@ function changeword(arr){
     }
     for(var i = 0; i < arr.length; i++){
         for(var j = 0; j < arr[i].length; j++){
+            // Untuk menentukan jumlah row dan collumn, digunakan 
+            // penjumlahan indeks i dan j sebagai patokannya
             if((i+j)%2 != 0){
                 output[i][j] = hurufBesar(arr[i][j]);
             }
@@ -75,10 +82,7 @@ function changeword(arr){
                 output[i][j] = balikKata(arr[i][j]);
             }
             if(angkaPrima(i+j) == true){
-                // console.log(angkaPrima(i+j)+''+(i+j))
-                // console.log(hapusVokal(output[i][j]))
                 output[i][j] = hapusVokal(output[i][j]);
-                // console.log(output[i][j])
             }
         }
     }

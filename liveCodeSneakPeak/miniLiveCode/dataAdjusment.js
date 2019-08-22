@@ -8,6 +8,7 @@ menjadi sebuah object, serta tahun lahir yang harus di transformasi menjadi umur
 Sangat mudah bukan?
 */
 
+// Pemformatan data sederhana berdasarkan array dua dimensi yang masuk
 function dataAdjustment(arr){
 	var output = [];
 	for(var i = 0; i < arr.length; i++){

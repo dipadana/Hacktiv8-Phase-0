@@ -17,17 +17,25 @@
 */ 
 
 function mazeRunner(persons, tracks){
-	var output = [];
+  // Membuat sebuah array kosong sebagai variabel penampung
+  var output = [];
+
 	for(var i = 0; i < tracks.length; i++){
 		var A = 0;
-		var B = 0;
+    var B = 0;
+    
+    // Lalu menghitung jumlah 'A' dan 'B' dari tiap-tiap runner
 		for(var j = 0; j < tracks[i].length; j++){
 			tracks[i][j] == 'A'? A++ : B++;
-		}
+    }
+    
+    // Jika hasil kali jumlah A dan B adalah kelipatan 3,
+    // maka dia adalah pemenang
 		if((A*B)%3 == 0 && A != 0 && B != 0){
 			output.push(persons[i])
 		}
-	}
+  }
+  // Jika output tetap kosong, artinya tidak ada pemenangnya/tidak ada data masuk
 	return output.length == 0 ? 'Tidak ada pemenangnya' : output; 
 }
 

@@ -18,12 +18,20 @@
 */
 
 function fearFactorFunc(data, arr){
+  // Membuat sebuah array yang berisi nama dari tiap - tiap indeks
 	var urutan = ['pertama', 'kedua', 'ketiga', 'keempat', ' kelima', 'keenam', 'ketujuh', 'kedelapan', 'kesembilan'];
-	for(var i = 0; i < arr.length; i++){
-		if(data == arr[i]){
+  
+  // Melakukan looping dan pengecekan,
+  // apakah data FearFactor yang masuk ada pada array
+  for(var i = 0; i < arr.length; i++){
+    
+    // Jika ada minimal satu, maka dia akan kalah
+    if(data == arr[i]){
 			return 'Dia kalah karena kelemahan yang ' + urutan[i];
 		}
-	}
+  }
+  
+  // Jika tidak ditemukan, maka dia akan menang
 	return 'Selamat dia juara';
 }
 

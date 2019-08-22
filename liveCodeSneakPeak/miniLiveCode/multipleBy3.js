@@ -21,14 +21,20 @@
 */
 
 function multipleBy3(arr){
-	var temp = [];
+  // Membuat sebuah array kosong,
+  // dan melakukan perhitungan semua komponen.
+  // Semua hasil perhitngan akan dijadikan satu array
+  var temp = [];
 	for(var i = 0; i < arr.length/2; i++){
 		temp[i] = arr[i]*arr[i+4]
 	}
-	console.log(temp);
-	var output = 0;
+
+  // Membuat sebuah variable 0
+  var output = 0;
 	for(var i = 0; i < temp.length; i++){
-		if((i+1)%2 != 0){
+    // Jika urutan bilangan yang masuk adalah ganjil, 
+    // maka dia akan ditambahkan
+    if((i+1)%2 != 0){
 			output += temp[i];
 		}
 	}

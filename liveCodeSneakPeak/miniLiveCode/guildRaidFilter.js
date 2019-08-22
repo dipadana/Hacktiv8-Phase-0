@@ -11,15 +11,21 @@ juga job yang sesuai dengan permintaan
  */
 
 function guildRaidFilter(arr, req){
-	var output = [];
-	
+  // Membuat sebuah array kosong yang akan dijadikan output
+  var output = [];
+  
+  // Melakukan looping untuk melakukan pengecekan
 	for(var i = 0; i < arr.length; i++){
 		for(var j = 0; j < req.jobs.length; j++){
+      // Jika job tersebut ada, dan powernya memenuhi syarat, 
+      // maka dia akan dimasukkan kaedalam Raid
 			if(arr[i].job == req.jobs[j] && arr[i].power >= req.power){
 				output.push(arr[i]);
 			}
 		}
-	}
+  }
+  
+  // Langsung return data yang ada
 	return output;
 }
 
