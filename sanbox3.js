@@ -1,88 +1,47 @@
-/*
-  /////////////////////
-  FUNCTION TUKAR GANJIL
-  /////////////////////
-  Fungsi Tukar Ganjil akan mengubah besar dan kecil huruf apabila berada di index yang ganjil.
-  [PROCESS]
-  INPUT:
-  'Dana K'
-  PROCESS:
-  1 => d (karena 1 ganjil)
-  2 => a
-  3 => N (karena 3 ganjil)
-  4 => a
-  5 => ' ' (diabaikan)
-  6 => K
-  OUTPUT:
-  daNa K
-  [RULES]
-  - Dilarang menggunakan built in function apapun
-*/
-
-function jadiBesar(str){
-	var abjadBesar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-	var abjadKecil = 'abcdefghijklmnopqrstuvwxyz';
-	var output = '';
-	for(var i = 0; i < str.length; i++){
-		var temp = '';
-		for(var j = 0; j < abjadKecil.length; j++){
-			if(str[i] == abjadKecil[j]){
-				temp = abjadBesar[j];
-				break;
-			}
-			else{
-				temp = str[i];
-			}
-		}
-		output += temp;
-	}
-	return output;
+function mySort(arr){
+  var temp = 0;
+  for(var i = 0; i < arr.length-1; i++){
+      for(var j = i+1; j < arr.length; j++){
+          // Rubah tanda '>' menjadi '<' untuk mengurutkan dari besar ke terkecil
+          if(arr[i] > arr[j]){
+              temp = arr[i];
+              arr[i] = arr[j];
+              arr[j] = temp;
+          }
+      }
+  }
+  return arr;
 }
 
-function jadiKecil(str){
-	var abjadBesar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-	var abjadKecil = 'abcdefghijklmnopqrstuvwxyz';
-	var output = '';
-	for(var i = 0; i < str.length; i++){
-		var temp = '';
-		for(var j = 0; j < abjadBesar.length; j++){
-			if(str[i] == abjadBesar[j]){
-				temp = abjadKecil[j];
-				break;
-			}
-			else{
-				temp = str[i];
-			}
-		}
-		output += temp;
-	}
-	return output;
-}
-
-function tukarGanjil(str){
-  var output = '';
-  for(var i = 0; i < str.length; i++){
-    if((i+1)%2 != 0){
-      if(str[i] == jadiBesar(str[i])){
-        output += jadiKecil(str[i]);
-      }
-      else if(str[i] == jadiKecil(str[i])) {
-        output += jadiBesar(str[i]);
-      }
-      else{
-        output += str[i];
-      }
+function removeDuplicate(arr){
+  var output = [];
+  mySort(arr);
+  var obj = {};
+  var objKey = [];
+  
+  for(var i = 0; i < arr.length; i++){
+    if(!obj[arr[i]]){
+      obj[arr[i]] = 1;
+      objKey.push(arr[i]);
     }
     else{
-      output += str[i];
+      obj[arr[i]] += 1;
     }
   }
+  
+  // Untuk mengetahui jumlah key yang ada
+  var key = Object.keys(obj).length;
+
+  
+
+  for(var i = 0; i < key; i++){
+    if(obj[objKey[i]] == 1){
+      output.push(objKey[i]);
+    }
+  }
+
   return output;
 }
 
-// TEST CASES
-console.log(tukarGanjil('Hello World')) // "heLlO woRlD"
-console.log(tukarGanjil('I aM aLAY')) // "i AM alAy"
-console.log(tukarGanjil('My Name is Bond!!')) // "my NAmE Is BOnD!!"
-console.log(tukarGanjil('IT sHOULD bE me')) // "iT shOuLd BE mE"
-console.log(tukarGanjil('001-A-3-5TrdYW')) // "001-a-3-5TRdyW"
+// console.log(removeDuplicate([1,2,3,4,4,4,4,4,5,5,5,5,6])); //[1, 2, 3, 4, 5, 6]
+console.log(removeDuplicate(['aku', 'aku', 'aku', 'dia', 'dia', 'saya'])); // ['aku', 'dia', 'saya']

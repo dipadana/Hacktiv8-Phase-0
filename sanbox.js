@@ -1,46 +1,97 @@
-/*
-  ================
-  Maze Runner
-  ================
-  [INSTRUCTIONS]
-  Maze Runner adalah suatu function yang dibuat untuk mengetahui, siapa yang
-  akan memenangkan perlombaan maze runner.
-  [EXAMPLE]
-  var persons = ['Andi', 'Betty', 'Ryan', 'Danang'];
-  var tracks = ['AABBAABB', 'ABAB', 'BBBBBBAA', 'AAAB'];
-  pemenangnya apabila jumlah A dan B atau sebaliknya berupa perbandingan 1 : 3
-  Ryan => 2 A dan 6 B => 1 : 3
-  Danang => 3 A dan 1 B => 3 : 1
-  output yang diharapkan adalah ['Ryan', 'Danang'];
-  [RULE]
-  - Tidak boleh menggunakan built in function selain .push() dan .unshift()
-*/ 
 
-function mazeRunner(persons, tracks){
-	var output = [];
-	for(var i = 0; i < tracks.length; i++){
-		var A = 0;
-		var B = 0;
-		for(var j = 0; j < tracks[i].length; j++){
-			tracks[i][j] == 'A'? A++ : B++;
+/*
+  ======================
+  MOBA LEGEND BEST POWER
+  ======================
+  mobaLegendBestPower adalah sebuah function dimana menerima 1 parameter heroes
+    - heroes adalah sebuah array of object yang berisi nama-nama hero mobile legend
+    - terdapat bonus combination yang merupakan bonus power untuk kombinasi hero
+  output dari function ini adalah sebuah number total power terbesar
+  [NOTES]
+  - intinya menjumlahkan semua power ditambah juga dengan bonusCombination bila ada yang sesuai
+  - dilarang menggunakan built in function selain .push(), .unshift(), .pop(), .shift()
+*/
+
+function mySplit(str,simbol) {
+	var temp = '';
+	var data1 = []
+	for(var i = 0; i < str.length; i++){
+		if(str[i] == simbol){
+			data1.push(temp);
+			temp = '';
 		}
-		if((A*B)%3 == 0 && A != 0 && B != 0){
-			output.push(persons[i])
+		else if(str[i] != ','){
+			temp += str[i];
 		}
 	}
-	return output.length == 0 ? 'Tidak ada pemenangnya' : output; 
+	data1.push(temp);
+	return(data1);
 }
 
-// TEST CASES
-let persons = ['Andi', 'Betty', 'Ryan', 'Danang']
-let tracks = ['AABBAABB', 'ABAB', 'BBBBBBAA', 'AAAB']
-console.log(mazeRunner(persons, tracks))
-// [ 'Ryan', 'Danang' ]
-let persons2 = ['Andi', 'Betty']
-let tracks2 = ['AAB', '']
-console.log(mazeRunner(persons2, tracks2))
-// Tidak ada pemenangnya
-let persons3 = ['Andi', 'Betty']
-let tracks3 = ['AAAB', '']
-console.log(mazeRunner(persons3, tracks3))
-// [ 'Andi' ]
+function mobaLegendBestPower(arr){
+  // Kombo hanya terbatas pada dua hero!
+  let bonusCombination = {
+    'Zi Long+Layla': 300,
+    'Layla+Kagura': 400
+  }
+
+  // Function for get the key of object
+  var bonusCombinationArr = [];
+  for(var property in bonusCombination) {
+    bonusCombinationArr.push(property);
+  }
+  var temp = [];
+  console.log(mySplit(bonusCombinationArr[0],'+'));
+  for(var i = 0; i < bonusCombinationArr.length; i++){
+    temp.push(mySplit(bonusCombinationArr[i],'+'));
+    temp[i].push(bonusCombination[bonusCombinationArr[i]])
+  }
+  console.log(temp)
+
+  var output = 0;
+  for(var i = 0; i < arr.length; i++){
+    output += arr[i].power
+  }
+  console.log(output)
+
+  console.log(arr)
+  for(var i = 0; i < arr.length-1; i++){
+    for(var j = 0; j < temp.length; j++){
+      console.log(arr[i].name, arr[i+1].name)
+        if(arr[i].name == temp[j][0] && arr[i+1].name == temp[j][1]){
+          output += temp[j][2];
+          console.log(temp[j][2])
+          
+        }
+        
+    }
+  }
+  return output;
+}
+
+//TEST CASE
+console.log(mobaLegendBestPower([
+  {
+    name: 'Zi Long',
+    power: 2000
+  },
+  {
+    name: 'Layla',
+    power: 1800
+  },
+  {
+    name: 'Kagura',
+    power: 2500
+  }
+])) // 7000
+
+console.log(mobaLegendBestPower([
+  {
+    name: 'Zi Long',
+    power: 2000
+  },
+  {
+    name: 'Layla',
+    power: 1800
+  }
+])) // 4100
