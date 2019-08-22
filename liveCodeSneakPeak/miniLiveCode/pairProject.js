@@ -24,37 +24,49 @@
 */
 
 function pairProject(arr){
+	// Membuat banyak array kosong sesuai kebutuhan
 	var output = [];
 	var tempSame = [];
 	var tempDif = [];
 	var result = [];
 
+	// Melakukan pemisahan antara nama yang memiliki abjad sama atau tidak
 	for(var i = 0; i < arr.length-1; i++){
+		// Jika ditemukan ada dua abjad sama yang saling bersebelahan,
+		// maka akan langsung dipisahkan, dan dimassukan kedalam array yang berbeda
 		if(arr[i][0] == arr[i+1][0]){
 			tempSame.push(arr[i]);
 		}
+		// jika tidak sama bersebelahan, maka akan langsung dimasukkan array
 		else{
 			tempDif.push(arr[i])
 		}
 	}
+	// Memasukkan anggota array yang paling terakhir
 	tempDif.push(arr[arr.length-1])
 
+	// Menggabungkan array dua array yang terbentuk tadi, 
+	// pemisahan tadi bertujuan untuk melakukan penyusunan
+	// ulang urutan dari nama-nama yang ada
 	for(var i = 0; i < tempSame.length; i++){
 		output.push(tempSame[i]);
 	}
-
 	for(var i = 0; i < tempDif.length; i++){
 		output.push(tempDif[i]);
 	}
 
+	// Jika sudah disusun ulang, maka langsung saja dikelompokkan 
+	// menjadi dua - dua grup
 	for(var i = 0; i < output.length; i+=2){
 		result.push(output[i] + ' and ' + output[i+1])
 	}
 	
-	return arr.length%2 != 0 ? "Jumlah murid harus genap" : result;
+	// Jika ternyata murid tidak genap atau kosong, maka ditampilkan array harus genap
+	return arr.length%2 != 0 || arr.length == 0 ? "Jumlah murid harus genap" : result;
 }
 
-console.log(pairProject(['Aries', 'Awtian', 'Momotaro', 'Yoki', 'Icha', 'Wika', 'Wawan', 'Mimin', 'Ryan', 'Yogi']))
+
+console.log(pairProject(['Aries', 'Momotaro', 'Awtian', 'Yoki', 'Icha', 'Wika', 'Wawan', 'Mimin', 'Ryan', 'Yogi']))
 /*
 [ 'Aries and Momotaro',
   'Awtian and Yoki',
@@ -65,5 +77,10 @@ console.log(pairProject(['Aries', 'Awtian', 'Momotaro', 'Yoki', 'Icha', 'Wika', 
 
 console.log(pairProject(['asep', 'baqi', 'jajang', 'junaedi', 'iqbal', 'toni']))
 /*
-    ["asep and baqi","jajang and iqbal","junaedi and toni"]
+  ["asep and baqi","jajang and iqbal","junaedi and toni"]
+*/
+
+console.log(pairProject(['asep', 'baqi', 'jajang', 'junaedi', 'iqbal']))
+/*
+  Jumlah murid harus genap
 */
