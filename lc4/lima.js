@@ -116,10 +116,13 @@ var daftarHeroes = {
   }
 }
 function userWeapon(user, weapon) {
+  // Dilakukan pengecekan jika kedua weapon type memiliki type yang sama,
+  // maka akan langsung dilakukan perubahan data
   if(daftarWeapon[user.weapon].type == daftarWeapon[weapon].type){
     user.attack = user.attack - daftarWeapon[user.weapon].attack + daftarWeapon[weapon].attack;
     return  user.name + ' menggunakan senjata ' + daftarWeapon[weapon].name + ' attack menjadi ' + user.attack
   }
+  // Jika tipe weapon tidak sama, maka dia invalid
   else{
     return 'Invalid Weapon';
   }
