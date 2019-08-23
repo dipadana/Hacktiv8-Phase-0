@@ -55,99 +55,74 @@
  * | monk     | knuckle              |
 */
 
-function userWeapon(user, weapon) {
-  var output = '';
-
-  var daftarWeapon = [
-    {
-      name : 'redKnife',
-      type : 'knife',
-      attack : 100
-    },
-    {
-      name : 'blackKnife',
-      type : 'knife',
-      attack : 300
-    },
-    {
-      name : 'crimsonSword',
-      type : 'katana',
-      attack : 800
-    },
-    {
-      name : 'moonLightSword',
-      type : 'katana',
-      attack : 400
-    },
-    {
-      name : 'starKunai',
-      type : 'kunai',
-      attack : 80
-    },
-    {
-      name : 'huumaShuriken',
-      type : 'kunai',
-      attack : 340
-    },
-    {
-      name :  'emptyBracer',
-      type : 'knucle',
-      attack : 20
-    },
-    {
-      name : 'brokenArms',
-      type : 'knife',
-      attack : 40
-    }
-  ]
-  var daftarHeroes = [
-    {
-      job : 'swordman',
-      weaponType : ['knife', 'katana']
-    },
-    {
-      job : 'ninja',
-      weaponType : ['knife', 'katana', 'kunai']
-    },
-    {
-      job : 'samurai',
-      weaponType : ['knife', 'katana']
-    },
-    {
-      job : 'monk',
-      weaponType : ['knuckle']
-    }
-  ]
-
-  for(var i = 0; i < daftarHeroes.length; i++){
-    if(user.job == daftarHeroes[i].job){
-
-      for(var j = 0; j < daftarWeapon.length; j++){
-        for(var k = 0; k < daftarHeroes[i].weaponType.length; k++){
-
-          if(weapon == daftarWeapon[j].name && daftarWeapon[j].type == daftarHeroes[i].weaponType[k]){
-            console.log(daftarWeapon[j])
-            console.log(user.weapon)
-            for(var l = 0; l < daftarWeapon.length; l++){
-
-              if(user.weapon == daftarWeapon[l].name){
-                console.log(daftarWeapon[l].attack)
-                user.attack = user.attack - daftarWeapon[l].attack + daftarWeapon[j].attack;
-                return user.name + ' menggunakan senjata ' + daftarWeapon[j].name + ' attack menjadi ' + user.attack;
-              }
-
-            }
-
-            
-          }
-
-        }
-      }
-      
-    }
+var daftarWeapon = {
+  redKnife : {
+    name : 'redKnife',
+    type : 'knife',
+    attack : 100
+  },
+  blackKnife : {
+    name : 'blackKnife',
+    type : 'knife',
+    attack : 300
+  },
+  crimsonSword : {
+    name : 'crimsonSword',
+    type : 'katana',
+    attack : 800
+  },
+  moonLightSword : {
+    name : 'moonLightSword',
+    type : 'katana',
+    attack : 400
+  },
+  starKunai : {
+    name : 'starKunai',
+    type : 'kunai',
+    attack : 80
+  },
+  huumaShuriken : {
+    name : 'huumaShuriken',
+    type : 'kunai',
+    attack : 340
+  },
+  emptyBracer : {
+    name :  'emptyBracer',
+    type : 'knucle',
+    attack : 20
+  },
+  brokenArms : {
+    name : 'brokenArms',
+    type : 'knife',
+    attack : 40
   }
-
-  return 'Invalid Weapon';
+}
+var daftarHeroes = {
+  swordman : {
+    job : 'swordman',
+    weaponType : ['knife', 'katana']
+  },
+  ninja : {
+    job : 'ninja',
+    weaponType : ['knife', 'katana', 'kunai']
+  },
+  samurai : {
+    job : 'samurai',
+    weaponType : ['knife', 'katana']
+  },
+  monk : {
+    job : 'monk',
+    weaponType : ['knuckle']
+  }
+}
+function userWeapon(user, weapon) {
+  if(daftarWeapon[user.weapon].type == daftarWeapon[weapon].type){
+    user.attack = user.attack - daftarWeapon[user.weapon].attack + daftarWeapon[weapon].attack;
+    return  user.name + ' menggunakan senjata ' + daftarWeapon[weapon].name + ' attack menjadi ' + user.attack
+  }
+  else{
+    return 'Invalid Weapon';
+  }
 }
 
 
