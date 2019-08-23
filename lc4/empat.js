@@ -54,17 +54,19 @@
  */
 
 function train(pokemon, candy) {
+  // Tambahkan level pokemon sesuai jumlah rarecandy yang ada
   pokemon.level += candy;
-  var nameAwal = pokemon.name;
   var nameStore = []
   var output = 'Congratulation, your ' + pokemon.name + ' grew to LV. ' + pokemon.level + '!';
+  
+  // Jika dia tidak memiliki evolution line,
+  // maka langsung di return kalimatnya
   if(!pokemon.evolutionLine){
     return output;
   }
-  console.log(pokemon.level);
-  console.log(pokemon.evolutionLine[0].level)
-  var length = pokemon.evolutionLine.length;
-
+  
+  // Jika dia memilki evolution line, 
+  // maka namanya langsung di push kedalam name store
   for(var i = 0; i < pokemon.evolutionLine.length; i++){
     if(pokemon.evolutionLine[i].level <= pokemon.level){
       nameStore.push(pokemon.evolutionLine[i].name)
@@ -73,17 +75,17 @@ function train(pokemon, candy) {
     }
   }
 
-  
-  console.log(pokemon)
-  console.log(nameStore)
-
+  // Ketika memilki evolution line, maka langsung ditambahkan
+  // sesuai pencapaian level
   if(nameStore.length != 0){
     output += ' And it evolved into ';
   }
-
-  if()
-  
-  console.log(pokemon)
+  if(nameStore.length ==  1){
+    output += nameStore[0] + '!';
+  }
+  else{
+    output += nameStore[0] + ' dan ' + nameStore[1] + '!';
+  }
   return output;
 }
 
@@ -105,7 +107,7 @@ var charmander = {
   ]
 }
 
-// console.log(train(charmander, 31))
+console.log(train(charmander, 31))
 // Congratulations, your Charmander grew to LV. 36! And it evolved into Charmeleon and Charizard!
 
 var mewtwo = {
@@ -114,7 +116,7 @@ var mewtwo = {
   level: 50
 }
 
-// console.log(train(mewtwo, 50))
+console.log(train(mewtwo, 50))
 // Congratulations, your Mewtwo grew to LV. 100!
 
 var zubat = {
@@ -144,5 +146,5 @@ var zubat = {
   ]
 }
 
-// console.log(train(zubat, 12))
+console.log(train(zubat, 12))
 // Congratulations, your Zubat grew to LV. 22! And it evolved into Golbat!
