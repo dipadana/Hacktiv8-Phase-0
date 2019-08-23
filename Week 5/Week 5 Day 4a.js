@@ -1,13 +1,13 @@
 // Hapus Simbol
-// function hapusSimbol(str) {
-//     return str.match(/[abcdefghijklmnopqrstuvwxyz0123456789]+/gi).join('');
-// }
-
-function hapusSimbol(str, str2 = '') {
-  var replace = '['+ str2 +']'
-  var re = new RegExp(replace,"gi");
-  return re.test(str);
+function hapusSimbol(str) {
+    return str.match(/[a-z0-9]+/gi);
 }
+
+// function hapusSimbol(str, str2 = '') {
+//   var replace = '['+ str2 +']'
+//   var re = new RegExp(replace,"gi");
+//   return re.test(str);
+// }
 
   // TEST CASES
   console.log(hapusSimbol('test%$4aa')); // test4aa

@@ -21,7 +21,45 @@
     - Minimal panjang karakter yang diinput adalah 3. Tampilkan 'Invalid input' jika kondisi ini tidak terpenuhi.
 */
 
-function diagonAlley(str){
+function diagonAlley(word) {
+  // Jika jumlah huruf yang masuk kurang dari 3, maka itu invalid
+  if(word.length < 3){return ('Invalid Input');}
+  
+  var barisAwal = '|';
+  var barisTengah = '|';
+  var barisAkhir = '';
+  
+  // Ini merupakan proses untuk baris pertama
+  for(var k = 0; k < word.length-2; k++){
+    barisAwal += '-'
+  }
+  barisAwal += word[0];
+  console.log(barisAwal)
+
+  // Ini merupakan proses untuk bagian di tengah
+  for(var i = 1; i <= word.length-2; i++){
+    for(var k = 0; k < word.length-2-i; k++){
+      barisTengah += '-'
+    }
+    barisTengah += word[i]
+    for(var j = 0; j < word.length-7+i ; j++){
+      barisTengah += '-'
+    }
+    barisTengah += '|';
+    console.log(barisTengah)
+    barisTengah = '|'
+  }
+  
+  // Ini merupakan proses untuk barius terakhir
+  barisAkhir += word[word.length-1];
+  for(var k = 0; k < word.length-2; k++){
+    barisAkhir += '-'
+  }
+  barisAkhir += '|'
+  console.log(barisAkhir)
+}
+
+function diagonAlley2(str){
   if(str.length < 3 ){
     console.log('Invalid Input');
   }
@@ -82,7 +120,7 @@ diagonAlley('kuroko')
 */
 console.log('')
 
-diagonAlley('non')
+// diagonAlley('non')
 /*
   |-n
   |o|
@@ -90,7 +128,7 @@ diagonAlley('non')
 */
 console.log('')
 
-diagonAlley('basuke')
+// diagonAlley('basuke')
 /*
   |----b
   |---a|
@@ -101,7 +139,7 @@ diagonAlley('basuke')
 */
 console.log('')
 
-// diagonAlley('ba')
+diagonAlley('ba')
 
 diagonAlley('no')
 // Invalid input
