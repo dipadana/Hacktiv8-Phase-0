@@ -46,12 +46,11 @@ OUTPUT: simbol # ditempatkan pada posisi indeks (4,1)
 */
 
 function findEmptySeat(room) {
-  // Membuat array kosong untuk penampung
-  var benar = false;
-  
   for(var i = 0; i < room.length; i++){
     // Melakukan pencarian ' ' pada array,
     // jika ditemukan ' ' maka akan dicatat kedalam count
+    // Jika hanya ditemukan satu tempat kosong,
+    // maka akan langsung diganti valuenya denga '#'
     var count = [];
     var temp = room[i];
     for(var j = 0; j < temp.length; j++){
@@ -60,13 +59,16 @@ function findEmptySeat(room) {
       }
     }
     
-    if(count.length > 1){
+    // Jika terdapat lebih dari satu tempat yang kosong dalam satu baris,
+    // maka yang diberikan value '#' adalah tempat yang paling kosong
+    if(count.length >= 1){
       temp [count[count.length-1]] = '#';
       break;
     }
   }
+
   // Jika ternyata tidak ada room yang kosong, maka di return tidak ada kursi kosong
-  return benar ? room : 'Maaf tidak ada kursi kosong tersedia';
+  return count.length != 0 ? room : 'Maaf tidak ada kursi kosong tersedia';
 }
 
 // TEST CASE
