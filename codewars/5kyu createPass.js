@@ -2,13 +2,15 @@
 // - harus ada Uppercase
 // - harus ada lowercase
 // - harus ada angka
+// - tidak boleh ada symbol
 
 function validatePassword(pass) {
     var char = false;
     var upp = false;
     var low = false;
     var num = false;
-    if(pass.length >= 8){
+    var symbol = true;
+    if(pass.length >= 6){
         char = true;
     }
     if(pass.toUpperCase() != pass){
@@ -20,7 +22,10 @@ function validatePassword(pass) {
     if(/\d/.test(pass)){
         num = true;
     }
-    return(char && upp && low && num);
+    if(/[^a-zA-Z0-9]/.test(pass)){
+        symbol = false;
+    }
+    return(char && upp && low && num && symbol);
 }
 
 console.log(validatePassword('aaaaaaaaaaaaaa')) //false

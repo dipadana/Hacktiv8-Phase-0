@@ -1,6 +1,6 @@
 // Hapus Simbol
 function hapusSimbol(str) {
-    return str.match(/[a-z0-9]+/gi);
+    return str.match(/[a-z0-9]+/gi).join('');
 }
 
 // function hapusSimbol(str, str2 = '') {
