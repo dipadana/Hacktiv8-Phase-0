@@ -18,5 +18,5 @@ function reverseThat(str){
 }
 
 console.log(reverseThat('             '));
-// console.log(reverseThat("I really don't like reversing strings!"));
-// console.log(reverseThat('Reverse this string, please!'));
+console.log(reverseThat("I really don't like reversing strings!"));
+console.log(reverseThat('Reverse this string, please!'));
