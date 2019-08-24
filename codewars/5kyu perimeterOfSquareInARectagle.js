@@ -21,4 +21,4 @@ function fiboSum(num){
 
 
 
-console.log(fiboSum(30)) 
+console.log(fiboSum(5)) //80 
