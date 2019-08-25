@@ -53,7 +53,7 @@ function sortAsc(arr, key, sort = 'asc'){
 // var arr = Object.keys(latihan[0]);
 // console.log(arr[2]);
 
-console.log(sortAsc(latihan, 3, 'dsc'));
+console.log(sortAsc(latihan, 0));
 
 // Release 1 => sorting isi ascending berdasarkan score
 /* 
