@@ -36,5 +36,5 @@ function removeDuplicate2(arr){
   return output;
 }
 
-console.log(removeDuplicate([1,2,3,4,4,4,4,4,5,5,5,5,6])); //[1, 2, 3, 4, 5, 6]
-console.log(removeDuplicate(['aku', 'aku', 'aku', 'dia', 'saya'])); // ['aku', 'dia', 'saya']
+console.log(removeDuplicate2([1,2,3,4,4,4,4,4,5,5,5,5,6])); //[1, 2, 3, 4, 5, 6]
+console.log(removeDuplicate2(['aku', 'aku', 'aku', 'dia', 'saya'])); // ['aku', 'dia', 'saya']
