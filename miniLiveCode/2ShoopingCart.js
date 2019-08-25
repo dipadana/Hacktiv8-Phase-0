@@ -53,40 +53,47 @@
     - Dilarang menggunakan built in function .indexOf() dan .include()
 */
 
-function cart(arr){
-  arr.sort();
-  var products = [
-    {
-      id: 1,
-      title: 'Motherboard Asus GTX 1000',
-      price: 1000000
-    },
-    {
-      id: 2,
-      title: 'Harddisk Seagate 1TB',
-      price: 1500000
-    },
-    {
-      id: 3,
-      title: 'RAM V-Gen 16GB',
-      price: 1600000
-    },
-    {
-      id: 4,
-      title: 'Monitor Samsung 15 inch',
-      price: 1300000
-    }
-  ];
+// Data untuk produk
+var products = [
+  {
+    id: 1,
+    title: 'Motherboard Asus GTX 1000',
+    price: 1000000
+  },
+  {
+    id: 2,
+    title: 'Harddisk Seagate 1TB',
+    price: 1500000
+  },
+  {
+    id: 3,
+    title: 'RAM V-Gen 16GB',
+    price: 1600000
+  },
+  {
+    id: 4,
+    title: 'Monitor Samsung 15 inch',
+    price: 1300000
+  }
+];
 
+function cart(arr){
+  // Melakukan sort data agar mempermudah proses perhitungan
+  arr.sort();
+  
+  // Membuat sebuah object penampung output
   var output = {
     title : 'Nota Pembayaran',
     carts : [],
     total : 0
   }
 
-  console.log(arr)
-  
+  // Melakuan proses perhitungan data
+  // Proses perulangan didasarkan pada jumlah product yang ada, 
+  // lalu di cek, apakah ada kode yang mengarah ke kode id produk tersebut
   for(var i = 0; i < products.length; i++){
+    // Membuat sebuah variabel counter untuk menghitung jumlah
+    // jumlah barang yang  dibeli
     var k = 1;
     for(var j = 0; j < arr.length; j++){
       if(arr[j] == products[i].id){
@@ -101,23 +108,12 @@ function cart(arr){
     }
   }
 
-  // var k = 0;
-  // for(var i = 0; i < arr.length; i++){
-  //   for(var j = 0; j < products.length; j++){
-  //     if(arr[i] == products[j].id){
-  //       temp.push({
-  //         id: products[j].id,
-  //         title: products[j].title,
-  //         qty: k++,
-  //         subtotal: products[j].price * 1
-  //       })
-  //     }
-  //   }
-  // }
-
+  // Melakukan perhitungan totak belanja
   for(var  i = 0; i < output.carts.length; i++){
     output.total += output.carts[i].subtotal;
   }
+
+  // Jika tidak ada produk yang dibeli, maka return maka tidak bisa dilanjutkan
   return arr.length == 0 ? 'anda harus memilih product' : output;
 }
 

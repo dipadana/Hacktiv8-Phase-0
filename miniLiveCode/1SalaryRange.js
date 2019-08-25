@@ -61,7 +61,7 @@
 */
 
 function salaryRangeCalculator(gaji, bulan){
-  
+  // Menyusun data golongan menjadi object
   var golongan = {
     golI : {
       tax : ((4/100)*gaji),
@@ -81,6 +81,7 @@ function salaryRangeCalculator(gaji, bulan){
     },
   }
 
+  // Memproses dan mengelompokkan data
   var tax; var bpjs;
   if(1000000 <= gaji && gaji <= 2999999){
     tax = golongan.golIV.tax;
@@ -99,12 +100,12 @@ function salaryRangeCalculator(gaji, bulan){
     bpjs = golongan.golI.bpjs;
   }
 
-  console.log(bpjs, tax)
-
+  // Melakuakn kalkulasi data untuk output 
   var salaryNett = gaji - tax - bpjs;
   var totalBPJS = bpjs * bulan;
 
-  return gaji < 1000000 ? 'Gaji anda dibawah standard peruhaan' : 'netSalary = ' + salaryNett + 'totalBPJS yang telah dibayarkan = ' + totalBPJS;
+  // Jika gaji tidak memenuhi minimum, maka tidak perlu dihitung
+  return gaji < 1000000 ? 'Gaji anda dibawah standard perusahaan' : 'netSalary = ' + salaryNett + 'totalBPJS yang telah dibayarkan = ' + totalBPJS;
 }
 
 console.log(salaryRangeCalculator(5000000, 3));
