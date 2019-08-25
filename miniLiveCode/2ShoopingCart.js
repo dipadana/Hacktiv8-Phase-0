@@ -54,6 +54,7 @@
 */
 
 function cart(arr){
+  arr.sort();
   var products = [
     {
       id: 1,
@@ -79,34 +80,50 @@ function cart(arr){
 
   var output = {
     title : 'Nota Pembayaran',
-    carts : []
+    carts : [],
+    total : 0
   }
 
-  var k = 0;
-  for(var i = 0; i < arr.length; i++){
-    for(var j = 0; j < products.length; j++){
-      if(arr[i] == products[j].id){
-        
-        for(var l = 0; l < output.carts.length; l++){
-          if(output.carts[l].id == arr[i])
-        }
-
-        output.carts.push({
-          id: products[j].id,
-          title: products[j].title,
-          qty: 1,
-          subtotal: products[j].price * 1
-        })
-      }
+  console.log(arr)
+  
+  for(var i = 0; i < products.length; i++){
+    var k = 1;
+    for(var j = 0; j < arr.length; j++){
+      if(arr[j] == products[i].id){
+        output.carts[i] = ({
+          id: products[i].id,
+          title: products[i].title,
+          qty: k,
+          subtotal: products[i].price * k
+        });
+        k++;
+      } 
     }
   }
 
-  console.log(output)
+  // var k = 0;
+  // for(var i = 0; i < arr.length; i++){
+  //   for(var j = 0; j < products.length; j++){
+  //     if(arr[i] == products[j].id){
+  //       temp.push({
+  //         id: products[j].id,
+  //         title: products[j].title,
+  //         qty: k++,
+  //         subtotal: products[j].price * 1
+  //       })
+  //     }
+  //   }
+  // }
+
+  for(var  i = 0; i < output.carts.length; i++){
+    output.total += output.carts[i].subtotal;
+  }
+  return arr.length == 0 ? 'anda harus memilih product' : output;
 }
 
 
 
-console.log(cart([1, 1, 2, 3, 3, 3]))
+console.log(cart([3, 1, 2, 1, 3, 3]))
 /*
     {
         title:"Nota Pembayaran"
@@ -134,7 +151,7 @@ console.log(cart([1, 1, 2, 3, 3, 3]))
     }
 */
 
-// console.log(cart([1, 3, 2, 1, 4, 3]))
+console.log(cart([1, 3, 2, 1, 4, 3]))
 /*
     { title: 'Nota Pembayaran',
     cart:
@@ -156,5 +173,5 @@ console.log(cart([1, 1, 2, 3, 3, 3]))
     total: 8000000 }
 */
 
-// console.log(cart([]))
+console.log(cart([]))
 // anda harus memilih product
