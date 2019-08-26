@@ -1,12 +1,25 @@
-function deleteArr(arr,start,remove){
-  var output = [];
-  for(var i = 0; i < arr.length; i++){
-    if(i != start){
-      output.push(arr[i])
+var str1 = '00000000000000000000000000000000000000000000000000000000000000000000000000123';
+var str2 = '123123';
+
+function removeZeroInFront(str){
+  var temp = str.split('')
+  var count = 0;
+  console.log(temp.length)
+  for(var i = 0; i < temp.length; i++){
+    if(temp[i] != '0'){
+      break;
     }
+    count++;
   }
-  return output;
+  for(var i = 0; i < count; i++){
+    temp.shift()
+  }
+  str = temp.join('')
+  return str;
 }
 
-var arr = [0,1,2,0,3,4,5];
-console.log(deleteArr(arr,3)) //[0,1,2,3,4,5]
+
+
+
+
+console.log(removeZeroInFront(str1))
