@@ -29,9 +29,13 @@
   2. Asumsi total kekuatan di setiap tim tidak ada yang sama/TIDAK ADA SERI
 */
 
+// Merupakan bagian fungsi yang menghitung kemenangan antar 2 tim
 function calculateProcess(str1, str2){
+  // Membuat satu array penampung dan masukkan dua variable inputan kedalam satu array
   var arr = [str1, str2];
   var result = []
+
+  // Melakukan perhitungan perolehan dua tim yang berbeda
   for(var i = 0; i < arr.length; i++){
     var temp = 0;
     for(var j = 0; j < arr[i].length; j++){
@@ -44,9 +48,10 @@ function calculateProcess(str1, str2){
     }
     result.push(temp)
   }
-  // return result.sort(function(a, b) { return b - a });
+  
+  // Melakukan proses penentuan hasil, dan penentuan pemenang
+  // berdasarkan hasil perhitungan, lalu output di return
   var output = [];
-  console.log(result)
   if(result[0] > result[1]){
     output.push(str1);
     output.push(str2);
@@ -55,40 +60,36 @@ function calculateProcess(str1, str2){
     output.push(str2);
     output.push(str1);
   }
-
   return (output);
 }
 
-// console.log(calculateProcess('ooO','OOOO'))
-
+// merupakan fungsi utama, penentu kemenangan
 function guildWars(arr){
+  // Membuat satu variable penampung
   var output = [];
 
+  // Mengitung hasil pertandingan antara kiri dan kanan
   var arrKiri = calculateProcess(arr[0],arr[1]);
   var arrKanan = calculateProcess(arr[2],arr[3]);
 
-  // console.log(arrKiri[0])
-
+  // Menentukan tim yang kalah/menang dari tiap-tiap tim
   var menangKiri = arrKiri[0];
   var menangKanan = arrKanan[0];
   var kalahKiri = arrKiri[1];
   var kalahKanan = arrKanan[1];
 
+  // Melakukan proses penentuan juara 1, 2, 3
   var menang = calculateProcess(menangKiri,menangKanan);
   var kalah = calculateProcess(kalahKiri,kalahKanan);
 
-  console.log(menang)
-  console.log(kalah)
-
+  // Memasukkan semua data kedalam array output,
+  // berdasarkan ururan juara
   for(var i = 0; i < 2; i++){
     output.push(menang[i]);
-    // output.menang[1];
   }
   for(var j = 0; j < 2; j++){
     output.push(kalah[j]);
-    // output.kalah[1];
   }
-  console.log(output)
   return 'Juara ke-2 adalah tim ' + output[1];
 }
 
