@@ -33,6 +33,7 @@
   */
 
   function go2D(x,y,move){
+    // Generate field yang kosong,4x4;
     var field = [ 
       [ ' ', ' ', ' ', ' ', ' ' ],
       [ ' ', ' ', ' ', ' ', ' ' ],
@@ -41,10 +42,13 @@
       [ ' ', ' ', ' ', ' ', ' ' ] 
     ]
 
+    // Menentukan kordinat awal
     var i = x;
     var j = y;
-
     field[i][j] = 'go'
+
+    // Melakukan perhitungan dan penentuan arah,
+    // lalu di return
     for(var k = 0; k < move.length; k++){
       if(move[k] == 'UP'){
         i -= 1;
@@ -63,7 +67,6 @@
         field[i][j] = `${k + 1}`;
       }
     }
-
     return(field);
   }
 
