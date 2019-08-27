@@ -22,21 +22,11 @@ function mySplit(str,simbol) {
 		}
 	}
 	data1.push(temp);
-	
-	console.log(data1)
-
 	if(simbol.length == 1){
 		return(data1);
 	}
-
-	console.log(data1)
 	var data2 = myJoin(data1,'');
-
-	console.log(data2)
 }
-
-
-
 
 console.log('anjingkamudandia'.split('dan'))
 

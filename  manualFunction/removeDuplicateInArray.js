@@ -13,28 +13,16 @@ function mySort(arr){
 	return arr;
 }
 
-function removeDuplicate(array){
-	var output = [' '];
-	var arr = mySort(array);
+function removeDuplicate(arr){
+	var output = [];
+	mySort(arr);
 	for(var i = 0; i < arr.length; i++){
 		if(arr[i] != arr[i+1]){
-			output.push(arr[i]);
+			output.push(arr[i])
 		}
 	}
-	output.shift()
 	return output;
 }
 
-function removeDuplicate2(arr){
-  var output = [];
-  mySort(arr);
-  for(var i = 0; i < arr.length; i++){
-    if(arr[i] != arr[i+1]){
-      output.push(arr[i])
-    }
-  }
-  return output;
-}
-
-console.log(removeDuplicate2([1,2,3,4,4,4,4,4,5,5,5,5,6])); //[1, 2, 3, 4, 5, 6]
-console.log(removeDuplicate2(['aku', 'aku', 'aku', 'dia', 'saya'])); // ['aku', 'dia', 'saya']
+console.log(removeDuplicate([1,2,3,4,4,4,4,4,5,5,5,5,6])); //[1, 2, 3, 4, 5, 6]
+console.log(removeDuplicate(['aku', 'aku', 'aku', 'dia', 'saya'])); // ['aku', 'dia', 'saya']

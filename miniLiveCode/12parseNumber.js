@@ -11,24 +11,28 @@
 */
 
 function parseNumber(num){
+  
+  // var arrNum = String(number).split('')
+  // console.log(arrNum)
+  // if(arrNum[arrNum.length-1] == '0'){
+  //   arrNum.pop();
+  // }
+  // console.log()
+
+  // var num = arrNum.join('');
+
+  if(num === 0){
+    return '';
+  }
   var arr = String(num)
-  console.log(arr)
-  if(arr.length == 1){
-    return String(num);
-  }
-  else{
-    console.log(arr.slice(1))
-    console.log(arr[0])
-    if(arr[0] == '0') return parseNumber(arr.slice(1));
-    if(arr.length == 2 && arr[1] == '0'){
-      array = arr.slice(arr.length-1);
-    }
-    return `${(10**(arr.length-1)) * Number(arr[0])}` + '+' + parseNumber(arr.slice(1));
-  }
+  var depan = 10**(arr.length-1) * Number(arr[0])
+  var belakang = parseNumber(num - depan)
+  // var belakang = nextString ? `+${nextString}` : '' 
+  return depan + '+' + belakang
 }
 
 console.log(parseNumber(3333)) // 3000+300+30+3
 console.log(parseNumber(90)) // 90
 console.log(parseNumber(2333)) // 2000+300+30+3
-console.log(parseNumber(5050)) // 5000+50
-console.log(parseNumber(550000)) // 500000+50000
+console.log(parseNumber(50500)) // 5000+50
+console.log(parseNumber(55000000000)) // 500000+50000

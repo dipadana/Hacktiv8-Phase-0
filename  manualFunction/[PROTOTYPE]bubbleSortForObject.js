@@ -25,29 +25,26 @@ var latihan = [
 function sortAsc(arr, key, sort = 'asc'){
   var array = Object.keys(arr[0]);  
   var key = array[key];
-
   var max = 0;
-    for(var i = 0; i < arr.length-1; i++){
-        for(var j = i+1; j < arr.length; j++){
-          if(sort == 'dsc'){
-            if(arr[i][key] < arr[j][key]){
-              max = arr[i];
-              arr[i] = arr[j];
-              arr[j] = max;
-            }
-          }
-          else{
-            if(arr[i][key] > arr[j][key]){
-              max = arr[i];
-              arr[i] = arr[j];
-              arr[j] = max;
-            }
-          }
-            
-
+  for(var i = 0; i < arr.length-1; i++){
+    for(var j = i+1; j < arr.length; j++){
+      if(sort == 'dsc'){
+        if(arr[i][key] < arr[j][key]){
+          max = arr[i];
+          arr[i] = arr[j];
+          arr[j] = max;
         }
+      }
+      else{
+        if(arr[i][key] > arr[j][key]){
+          max = arr[i];
+          arr[i] = arr[j];
+          arr[j] = max;
+        }
+      }
     }
-    return arr;
+  }
+  return arr;
 }
 
 // var arr = Object.keys(latihan[0]);
