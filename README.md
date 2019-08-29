@@ -1,3 +1,2 @@
 ### Batch 35 Hacktiv8 | Phase 0 activity
-Dipadana Putu
-# dipadana.github.io
+Dipadana Putu | https://dipadana.github.io/
